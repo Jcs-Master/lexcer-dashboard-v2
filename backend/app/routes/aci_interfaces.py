@@ -1,3 +1,4 @@
+from io import BytesIO
 from xml.etree import ElementTree as ET
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
@@ -94,10 +95,11 @@ def generate():
         return jsonify({'error': 'Formato invalido. Use .xls o .xlsx'}), 400
 
     try:
-        df = read_excel_file(f)
-        down_xml, down_sum = build_xml(df, rollback=False)
         f.stream.seek(0)
-        df2 = read_excel_file(f)
+        excel_bytes = f.read()
+        df = read_excel_file(BytesIO(excel_bytes))
+        down_xml, down_sum = build_xml(df, rollback=False)
+        df2 = read_excel_file(BytesIO(excel_bytes))
         up_xml, up_sum = build_xml(df2, rollback=True)
     except ValueError as e:
         return jsonify({'error': str(e)}), 400
@@ -107,6 +109,7 @@ def generate():
     user_id = get_jwt_identity()
     gen = AciGeneration(
         user_id=user_id, generation_type='interfaces', filename=secure_filename(f.filename),
+        excel_data=excel_bytes,
         main_xml=down_xml, rollback_xml=up_xml, summary=down_sum
     )
     db.session.add(gen)

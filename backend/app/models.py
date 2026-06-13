@@ -133,6 +133,7 @@ class AciGeneration(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False, index=True)
     generation_type = db.Column(db.String(20), nullable=False)  # 'paths', 'interfaces'
     filename = db.Column(db.String(255), nullable=False)
+    excel_data = db.Column(db.LargeBinary)  # Contenido del archivo Excel original
     main_xml = db.Column(db.Text)
     rollback_xml = db.Column(db.Text)
     summary = db.Column(db.JSON)

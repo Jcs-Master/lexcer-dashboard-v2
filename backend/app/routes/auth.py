@@ -315,7 +315,7 @@ def download_aci_file(gen_id, file_type):
         return jsonify({'error': 'Generacion no encontrada'}), 404
     
     if file_type == 'excel':
-        excel_bytes = gen.excel_content or b''
+        excel_bytes = gen.excel_data or b''
         excel_b64 = base64.b64encode(excel_bytes).decode('utf-8') if excel_bytes else ''
         return jsonify({
             'filename': gen.filename,

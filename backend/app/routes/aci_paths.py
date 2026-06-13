@@ -1,4 +1,5 @@
 from collections import defaultdict
+from io import BytesIO
 from xml.etree import ElementTree as ET
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
@@ -95,10 +96,11 @@ def generate():
     leafs_def = request.form.get('leafs_default')
 
     try:
-        df = read_excel_file(f, sheet)
-        main_xml, main_sum = build_xml(df, rollback=False, pod_def=pod_def, leafs_def=leafs_def)
         f.stream.seek(0)
-        df2 = read_excel_file(f, sheet)
+        excel_bytes = f.read()
+        df = read_excel_file(BytesIO(excel_bytes), sheet)
+        main_xml, main_sum = build_xml(df, rollback=False, pod_def=pod_def, leafs_def=leafs_def)
+        df2 = read_excel_file(BytesIO(excel_bytes), sheet)
         rb_xml, rb_sum = build_xml(df2, rollback=True, pod_def=pod_def, leafs_def=leafs_def)
     except ValueError as e:
         return jsonify({'error': str(e)}), 400
@@ -108,6 +110,7 @@ def generate():
     user_id = get_jwt_identity()
     gen = AciGeneration(
         user_id=user_id, generation_type='paths', filename=secure_filename(f.filename),
+        excel_data=excel_bytes,
         main_xml=main_xml, rollback_xml=rb_xml, summary=main_sum
     )
     db.session.add(gen)
