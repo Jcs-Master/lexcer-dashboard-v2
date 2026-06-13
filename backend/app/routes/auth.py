@@ -279,7 +279,7 @@ def update_user_permissions(user_id):
 @jwt_required()
 def list_aci_generations():
     """Listar historial de generaciones XML ACI"""
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     page = request.args.get('page', 1, type=int)
     per_page = request.args.get('per_page', 50, type=int)
     
@@ -308,7 +308,7 @@ def list_aci_generations():
 def download_aci_file(gen_id, file_type):
     """Descargar archivo Excel o XML de una generacion ACI"""
     import base64
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     gen = AciGeneration.query.get(gen_id)
     
     if not gen or gen.user_id != user_id:
