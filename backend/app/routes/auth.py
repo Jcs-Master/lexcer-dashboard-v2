@@ -287,13 +287,58 @@ def list_aci_generations():
         .order_by(AciGeneration.created_at.desc())\
         .paginate(page=page, per_page=per_page, error_out=False)
     
+    items = []
+    for g in pagination.items:
+        d = g.to_dict()
+        user = User.query.get(g.user_id)
+        d['username'] = user.username if user else 'N/A'
+        items.append(d)
+    
     return jsonify({
-        'items': [g.to_dict() for g in pagination.items],
+        'items': items,
         'total': pagination.total,
         'pages': pagination.pages,
         'current_page': page,
         'per_page': per_page
     }), 200
+
+
+@auth_bp.route('/aci-generations/<int:gen_id>/download/<string:file_type>', methods=['GET'])
+@jwt_required()
+def download_aci_file(gen_id, file_type):
+    """Descargar archivo Excel o XML de una generacion ACI"""
+    user_id = get_jwt_identity()
+    gen = AciGeneration.query.get(gen_id)
+    
+    if not gen or gen.user_id != user_id:
+        return jsonify({'error': 'Generacion no encontrada'}), 404
+    
+    if file_type == 'excel':
+        return jsonify({
+            'filename': gen.filename,
+            'content': gen.excel_content,
+            'content_type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        }), 200
+    
+    elif file_type == 'main_xml':
+        main_xml = gen.main_xml or ''
+        suffix = '_delete.xml' if gen.generation_type == 'paths' else '_down.xml'
+        return jsonify({
+            'filename': gen.filename.replace('.xlsx', suffix).replace('.xls', suffix),
+            'content': main_xml,
+            'content_type': 'application/xml'
+        }), 200
+    
+    elif file_type == 'rollback_xml':
+        rollback_xml = gen.rollback_xml or ''
+        suffix = '_rollback.xml' if gen.generation_type == 'paths' else '_up.xml'
+        return jsonify({
+            'filename': gen.filename.replace('.xlsx', suffix).replace('.xls', suffix),
+            'content': rollback_xml,
+            'content_type': 'application/xml'
+        }), 200
+    
+    return jsonify({'error': 'Tipo de archivo invalido'}), 400
 
 
 # Callback para verificar si un token esta en la blacklist

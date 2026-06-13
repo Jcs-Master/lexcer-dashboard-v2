@@ -77,6 +77,7 @@ export const aciAPI = {
     headers: { 'Content-Type': 'multipart/form-data' }
   }),
   listGenerations: (params) => api.get('/auth/aci-generations', { params }),
+  downloadFile: (genId, fileType) => api.get(`/auth/aci-generations/${genId}/download/${fileType}`),
 }
 
 export default api

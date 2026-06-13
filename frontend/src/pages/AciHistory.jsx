@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { aciAPI } from '../services/api'
-import { History, FileCode, Route, Activity, Calendar } from 'lucide-react'
+import { History, Route, Activity, Calendar, User, Download, FileSpreadsheet, FileCode } from 'lucide-react'
 
 export default function AciHistory() {
   const [generations, setGenerations] = useState([])
@@ -26,6 +26,36 @@ export default function AciHistory() {
     if (!iso) return '-'
     const d = new Date(iso)
     return d.toLocaleString('es-PE')
+  }
+
+  const downloadFile = async (genId, fileType, label) => {
+    try {
+      const res = await aciAPI.downloadFile(genId, fileType)
+      const { filename, content, content_type } = res.data
+
+      // Decodificar base64 si es Excel, o usar texto plano si es XML
+      let blob
+      if (content_type.includes('spreadsheet')) {
+        const byteChars = atob(content)
+        const byteNumbers = new Array(byteChars.length)
+        for (let i = 0; i < byteChars.length; i++) {
+          byteNumbers[i] = byteChars.charCodeAt(i)
+        }
+        const byteArray = new Uint8Array(byteNumbers)
+        blob = new Blob([byteArray], { type: content_type })
+      } else {
+        blob = new Blob([content], { type: content_type })
+      }
+
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = filename
+      a.click()
+      URL.revokeObjectURL(url)
+    } catch (e) {
+      alert('Error descargando ' + label)
+    }
   }
 
   return (
@@ -59,9 +89,11 @@ export default function AciHistory() {
               <thead className="bg-slate-800/50">
                 <tr>
                   <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase">Fecha</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase">Usuario</th>
                   <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase">Tipo</th>
                   <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase">Archivo Excel</th>
                   <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase">Resumen</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase">Descargas</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800">
@@ -71,6 +103,12 @@ export default function AciHistory() {
                       <div className="flex items-center gap-2">
                         <Calendar className="w-3.5 h-3.5 text-slate-500" />
                         {formatDate(g.created_at)}
+                      </div>
+                    </td>
+                    <td className="px-4 py-3">
+                      <div className="flex items-center gap-1.5">
+                        <User className="w-3.5 h-3.5 text-slate-500" />
+                        <span className="text-slate-300">{g.username || 'N/A'}</span>
                       </div>
                     </td>
                     <td className="px-4 py-3">
@@ -94,6 +132,31 @@ export default function AciHistory() {
                       ) : (
                         <span className="text-slate-600">-</span>
                       )}
+                    </td>
+                    <td className="px-4 py-3">
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => downloadFile(g.id, 'excel', 'Excel')}
+                          title="Descargar Excel"
+                          className="p-1.5 rounded-md bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition"
+                        >
+                          <FileSpreadsheet className="w-3.5 h-3.5" />
+                        </button>
+                        <button
+                          onClick={() => downloadFile(g.id, 'main_xml', 'XML Main')}
+                          title="Descargar XML Delete/Down"
+                          className="p-1.5 rounded-md bg-red-500/10 text-red-400 hover:bg-red-500/20 transition"
+                        >
+                          <FileCode className="w-3.5 h-3.5" />
+                        </button>
+                        <button
+                          onClick={() => downloadFile(g.id, 'rollback_xml', 'XML Rollback')}
+                          title="Descargar XML Rollback/Up"
+                          className="p-1.5 rounded-md bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition"
+                        >
+                          <FileCode className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
