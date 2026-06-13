@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { aciAPI } from '../services/api'
-import { History, Route, Activity, Calendar, User, Download, FileSpreadsheet, FileCode } from 'lucide-react'
+import { useAuth } from '../context/AuthContext'
+import { History, Route, Activity, Calendar, User, FileSpreadsheet, FileCode, Trash2 } from 'lucide-react'
 
 export default function AciHistory() {
+  const { isAdmin } = useAuth()
   const [generations, setGenerations] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -26,6 +28,16 @@ export default function AciHistory() {
     if (!iso) return '-'
     const d = new Date(iso)
     return d.toLocaleString('es-PE')
+  }
+
+  const deleteRecord = async (genId) => {
+    if (!confirm('¿Estás seguro de eliminar este registro?')) return
+    try {
+      await aciAPI.deleteGeneration(genId)
+      setGenerations(prev => prev.filter(g => g.id !== genId))
+    } catch (e) {
+      alert(e.response?.data?.error || 'Error eliminando registro')
+    }
   }
 
   const downloadFile = async (genId, fileType, label) => {
@@ -94,6 +106,7 @@ export default function AciHistory() {
                   <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase">Archivo Excel</th>
                   <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase">Resumen</th>
                   <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase">Descargas</th>
+                  {isAdmin() && <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase">Acciones</th>}
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800">
@@ -158,6 +171,17 @@ export default function AciHistory() {
                         </button>
                       </div>
                     </td>
+                    {isAdmin() && (
+                      <td className="px-4 py-3">
+                        <button
+                          onClick={() => deleteRecord(g.id)}
+                          title="Eliminar registro"
+                          className="p-1.5 rounded-md bg-red-500/10 text-red-400 hover:bg-red-500/20 transition"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </td>
+                    )}
                   </tr>
                 ))}
               </tbody>

@@ -344,6 +344,23 @@ def download_aci_file(gen_id, file_type):
     return jsonify({'error': 'Tipo de archivo invalido'}), 400
 
 
+@auth_bp.route('/aci-generations/<int:gen_id>', methods=['DELETE'])
+@jwt_required()
+@admin_required
+def delete_aci_generation(gen_id):
+    """Eliminar un registro del historial ACI (solo admin)"""
+    user_id = int(get_jwt_identity())
+    gen = AciGeneration.query.get(gen_id)
+    
+    if not gen:
+        return jsonify({'error': 'Generacion no encontrada'}), 404
+    
+    db.session.delete(gen)
+    db.session.commit()
+    
+    return jsonify({'message': 'Registro eliminado'}), 200
+
+
 # Callback para verificar si un token esta en la blacklist
 @jwt_manager.token_in_blocklist_loader
 def check_if_token_revoked(jwt_header, jwt_payload):

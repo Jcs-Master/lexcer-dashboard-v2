@@ -78,6 +78,7 @@ export const aciAPI = {
   }),
   listGenerations: (params) => api.get('/auth/aci-generations', { params }),
   downloadFile: (genId, fileType) => api.get(`/auth/aci-generations/${genId}/download/${fileType}`),
+  deleteGeneration: (genId) => api.delete(`/auth/aci-generations/${genId}`),
 }
 
 export default api
