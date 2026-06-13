@@ -280,18 +280,25 @@ def update_user_permissions(user_id):
 def list_aci_generations():
     """Listar historial de generaciones XML ACI"""
     user_id = int(get_jwt_identity())
+    user = User.query.get(user_id)
+    is_admin = user.is_admin() if user else False
+    
     page = request.args.get('page', 1, type=int)
     per_page = request.args.get('per_page', 50, type=int)
     
-    pagination = AciGeneration.query.filter_by(user_id=user_id)\
-        .order_by(AciGeneration.created_at.desc())\
+    # Admin ve todo, usuario normal solo sus propios registros
+    query = AciGeneration.query
+    if not is_admin:
+        query = query.filter_by(user_id=user_id)
+    
+    pagination = query.order_by(AciGeneration.created_at.desc())\
         .paginate(page=page, per_page=per_page, error_out=False)
     
     items = []
     for g in pagination.items:
         d = g.to_dict()
-        user = User.query.get(g.user_id)
-        d['username'] = user.username if user else 'N/A'
+        gen_user = User.query.get(g.user_id)
+        d['username'] = gen_user.username if gen_user else 'N/A'
         items.append(d)
     
     return jsonify({
@@ -309,9 +316,13 @@ def download_aci_file(gen_id, file_type):
     """Descargar archivo Excel o XML de una generacion ACI"""
     import base64
     user_id = int(get_jwt_identity())
+    user = User.query.get(user_id)
+    is_admin = user.is_admin() if user else False
+    
     gen = AciGeneration.query.get(gen_id)
     
-    if not gen or gen.user_id != user_id:
+    # Admin puede descargar cualquier registro, usuario normal solo los suyos
+    if not gen or (not is_admin and gen.user_id != user_id):
         return jsonify({'error': 'Generacion no encontrada'}), 404
     
     if file_type == 'excel':
