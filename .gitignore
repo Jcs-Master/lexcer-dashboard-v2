@@ -1,0 +1,41 @@
+# Entorno y secretos
+backend/.env
+backend/lexcer_dashboard.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+venv/
+env/
+.env
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+
+# Uploads y archivos temporales
+backend/uploads/
+*.log
+*.tmp
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scripts de utilidad local
+backend/reset_password.py
+backend/update_admin.py
+
+# Directorios con sub-repositorios
+LexCer_IA/
