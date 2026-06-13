@@ -144,14 +144,14 @@ export default function AciHistory() {
                         </button>
                         <button
                           onClick={() => downloadFile(g.id, 'main_xml', 'XML Main')}
-                          title="Descargar XML Delete/Down"
+                          title="XML de Borrado"
                           className="p-1.5 rounded-md bg-red-500/10 text-red-400 hover:bg-red-500/20 transition"
                         >
                           <FileCode className="w-3.5 h-3.5" />
                         </button>
                         <button
                           onClick={() => downloadFile(g.id, 'rollback_xml', 'XML Rollback')}
-                          title="Descargar XML Rollback/Up"
+                          title="XML de creación"
                           className="p-1.5 rounded-md bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition"
                         >
                           <FileCode className="w-3.5 h-3.5" />

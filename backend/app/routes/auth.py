@@ -307,6 +307,7 @@ def list_aci_generations():
 @jwt_required()
 def download_aci_file(gen_id, file_type):
     """Descargar archivo Excel o XML de una generacion ACI"""
+    import base64
     user_id = get_jwt_identity()
     gen = AciGeneration.query.get(gen_id)
     
@@ -314,9 +315,11 @@ def download_aci_file(gen_id, file_type):
         return jsonify({'error': 'Generacion no encontrada'}), 404
     
     if file_type == 'excel':
+        excel_bytes = gen.excel_content or b''
+        excel_b64 = base64.b64encode(excel_bytes).decode('utf-8') if excel_bytes else ''
         return jsonify({
             'filename': gen.filename,
-            'content': gen.excel_content,
+            'content': excel_b64,
             'content_type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
         }), 200
     
