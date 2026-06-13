@@ -3,7 +3,8 @@ from flask_jwt_extended import (
     create_access_token, create_refresh_token,
     jwt_required, get_jwt_identity, get_jwt
 )
-from app.models import db, User
+from app.models import db, User, AciGeneration
+from app import jwt as jwt_manager
 
 auth_bp = Blueprint('auth', __name__)
 
@@ -274,9 +275,28 @@ def update_user_permissions(user_id):
     }), 200
 
 
-# Callback para verificar si un token esta en la blacklist
-from app import jwt as jwt_manager
+@auth_bp.route('/aci-generations', methods=['GET'])
+@jwt_required()
+def list_aci_generations():
+    """Listar historial de generaciones XML ACI"""
+    user_id = get_jwt_identity()
+    page = request.args.get('page', 1, type=int)
+    per_page = request.args.get('per_page', 50, type=int)
+    
+    pagination = AciGeneration.query.filter_by(user_id=user_id)\
+        .order_by(AciGeneration.created_at.desc())\
+        .paginate(page=page, per_page=per_page, error_out=False)
+    
+    return jsonify({
+        'items': [g.to_dict() for g in pagination.items],
+        'total': pagination.total,
+        'pages': pagination.pages,
+        'current_page': page,
+        'per_page': per_page
+    }), 200
 
+
+# Callback para verificar si un token esta en la blacklist
 @jwt_manager.token_in_blocklist_loader
 def check_if_token_revoked(jwt_header, jwt_payload):
     return jwt_payload['jti'] in jwt_blocklist

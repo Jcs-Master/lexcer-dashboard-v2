@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import {
   Home, FileCode, Terminal, Settings, ChevronDown,
-  Network, Shield, Layers, Filter, Server, Users, Route, Activity
+  Network, Shield, Layers, Filter, Server, Users, Route, Activity, History
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
@@ -37,6 +37,7 @@ export default function Sidebar({ open, onClose }) {
         { id: 'aci-filter', label: 'Filters', icon: Filter, path: '/templates?type=aci_filter', permission: 'templates' },
         { id: 'aci-paths', label: 'ACI Paths', icon: Route, path: '/aci-paths', permission: 'templates' },
         { id: 'aci-interfaces', label: 'Interfaces Up/Down', icon: Activity, path: '/aci-interfaces', permission: 'templates' },
+        { id: 'aci-history', label: 'Historial', icon: History, path: '/aci-history', permission: 'templates' },
       ]
     },
     { id: 'commands', label: 'Lector de Comandos', icon: Terminal, path: '/commands', permission: 'commands' },

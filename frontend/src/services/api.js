@@ -76,6 +76,7 @@ export const aciAPI = {
   generateInterfaces: (formData) => api.post('/aci-interfaces/generate', formData, {
     headers: { 'Content-Type': 'multipart/form-data' }
   }),
+  listGenerations: (params) => api.get('/auth/aci-generations', { params }),
 }
 
 export default api
