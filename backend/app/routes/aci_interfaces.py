@@ -65,9 +65,10 @@ def build_xml(df, rollback=False):
             continue
 
         dn = build_dn(pod, leaf, interface)
-        attrs = {'tDn': dn, 'status': status_val}
+        attrs = {'tDn': dn}
         if not rollback:
             attrs['lc'] = 'blacklist'
+        attrs['status'] = status_val
         ET.SubElement(fabric_oos, 'fabricRsOosPath', **attrs)
 
         desc = ''
@@ -130,7 +131,7 @@ def generate():
 
 @aci_interfaces_bp.route('/template', methods=['GET'])
 def download_template():
-    """Descargar plantilla Excel (.xlsx) con datos de ejemplo para Interfaces Up/Down"""
+    """Descargar plantilla Excel (.xlsx) con datos de ejemplo para Interface Status"""
     df = pd.DataFrame([
         [1, 101, 'eth1/1', 'Interfaz de ejemplo 1'],
         [1, 102, 'eth1/2', 'Interfaz de ejemplo 2'],

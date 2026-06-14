@@ -65,9 +65,9 @@ export default function AciInterfaces() {
       <div>
         <h1 className="text-2xl font-bold text-slate-100 flex items-center gap-2">
           <Activity className="w-6 h-6 text-emerald-400" />
-          Interfaces Up/Down
+          Interface Status
         </h1>
-        <p className="text-sm text-slate-500 mt-1">Genera XML para apagar/encender interfaces de leafs ACI</p>
+        <p className="text-sm text-slate-500 mt-1">Genera XML para cambiar estado de interfaces ACI (Up/Down)</p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -173,7 +173,7 @@ export default function AciInterfaces() {
               {['up', 'down'].map(tab => (
                 <button key={tab} onClick={() => setActiveTab(tab)}
                   className={`px-4 py-2.5 text-sm font-medium transition ${activeTab === tab ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-slate-500 hover:text-slate-300'}`}>
-                  {tab === 'up' ? 'XML Up (rollback)' : 'XML Down (blacklist)'}
+                  {tab === 'up' ? 'XML Up (Rollback)' : 'XML Down (Blacklist)'}
                 </button>
               ))}
             </div>
@@ -187,11 +187,11 @@ export default function AciInterfaces() {
           <div className="grid gap-4 sm:grid-cols-2">
             <button onClick={() => download(`${result.filename.replace(/\.[^.]+$/, '')}_up.xml`, result.rollback_xml)}
               className="btn-primary flex items-center justify-center gap-2">
-              <Download className="w-4 h-4" /> Descargar XML Up
+              <Download className="w-4 h-4" /> Descargar XML Up (Rollback)
             </button>
             <button onClick={() => download(`${result.filename.replace(/\.[^.]+$/, '')}_down.xml`, result.main_xml)}
               className="btn-secondary flex items-center justify-center gap-2">
-              <Download className="w-4 h-4" /> Descargar XML Down
+              <Download className="w-4 h-4" /> Descargar XML Down (Blacklist)
             </button>
           </div>
         </div>
