@@ -13,7 +13,8 @@ ALLOWED = {'xls', 'xlsx'}
 def allowed(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED
 
-def build_policy_group_xml(df, delete_mode=False):
+def build_policy_group_xml(df):
+    """Genera XML de creacion — con todos los hijos y relaciones"""
     cols_orig = list(df.columns)
     cols = normalize_cols(cols_orig)
 
@@ -34,7 +35,7 @@ def build_policy_group_xml(df, delete_mode=False):
     summary = {'rows': len(df), 'processed': 0, 'skipped': 0,
                'link': 0, 'pc': 0, 'vpc': 0, 'warnings': []}
     
-    status_val = 'deleted' if delete_mode else 'created,modified'
+    status_val = 'created,modified'
     
     pol_uni = ET.Element('polUni', status=status_val)
     infra_infra = ET.SubElement(pol_uni, 'infraInfra', status=status_val)
@@ -103,6 +104,54 @@ def build_policy_group_xml(df, delete_mode=False):
     return xml, summary
 
 
+def build_policy_group_delete_xml(df):
+    """Genera XML de rollback (borrado) limpio — solo nodos padre con status='deleted'"""
+    cols_orig = list(df.columns)
+    cols = normalize_cols(cols_orig)
+    name_c = get_column_name(cols_orig, cols, ['NAME'])
+    type_c = get_column_name(cols_orig, cols, ['TYPE'])
+
+    summary = {'rows': len(df), 'processed': 0, 'skipped': 0,
+               'link': 0, 'pc': 0, 'vpc': 0, 'warnings': []}
+
+    # Estructura padre SIN status="deleted" en contenedores
+    pol_uni = ET.Element('polUni')
+    infra_infra = ET.SubElement(pol_uni, 'infraInfra')
+    infra_funcp = ET.SubElement(infra_infra, 'infraFuncP')
+
+    for idx, row in df.iterrows():
+        name = str(row[name_c]).strip() if name_c and pd.notna(row[name_c]) else None
+        type_val = str(row[type_c]).strip().upper() if type_c and pd.notna(row[type_c]) else None
+
+        if not name:
+            summary['skipped'] += 1
+            if len(summary['warnings']) < 10:
+                summary['warnings'].append(f'Fila {idx+2}: NAME vacio')
+            continue
+
+        if not type_val or type_val not in ('LINK', 'PC', 'VPC'):
+            summary['skipped'] += 1
+            if len(summary['warnings']) < 10:
+                summary['warnings'].append(f'Fila {idx+2}: TYPE invalido ({type_val}), debe ser LINK, PC o VPC')
+            continue
+
+        summary['processed'] += 1
+
+        if type_val == 'LINK':
+            summary['link'] += 1
+            ET.SubElement(infra_funcp, 'infraAccPortGrp', name=name, status='deleted')
+        else:
+            # PC o VPC
+            if type_val == 'PC':
+                summary['pc'] += 1
+            else:
+                summary['vpc'] += 1
+            ET.SubElement(infra_funcp, 'infraAccBndlGrp', name=name, status='deleted')
+
+    xml = prettify_xml(pol_uni)
+    return xml, summary
+
+
 @aci_policy_groups_bp.route('/generate', methods=['POST'])
 @jwt_required()
 def generate():
@@ -117,9 +166,9 @@ def generate():
         f.stream.seek(0)
         excel_bytes = f.read()
         df = read_excel_file(BytesIO(excel_bytes))
-        create_xml, create_sum = build_policy_group_xml(df, delete_mode=False)
+        create_xml, create_sum = build_policy_group_xml(df)
         df2 = read_excel_file(BytesIO(excel_bytes))
-        delete_xml, delete_sum = build_policy_group_xml(df2, delete_mode=True)
+        delete_xml, delete_sum = build_policy_group_delete_xml(df2)
     except ValueError as e:
         return jsonify({'error': str(e)}), 400
     except Exception as e:
