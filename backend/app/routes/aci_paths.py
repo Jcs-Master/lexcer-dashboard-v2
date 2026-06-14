@@ -70,9 +70,10 @@ def build_xml(df, delete_mode=False):
 
         type_val = str(row[type_c]).strip().upper()
         mode_val = str(row[mode_c]).strip() if mode_c and pd.notna(row[mode_c]) else 'regular'
-        pod = row[pod_c]
-        leaf = row[leaf_c]
-        ipg_port = row[ipg_c]
+        # Leer POD/LEAF/IPG con manejo de floats
+        pod = int(float(row[pod_c])) if pd.notna(row[pod_c]) else None
+        leaf = str(row[leaf_c]).strip() if pd.notna(row[leaf_c]) else None
+        ipg_port = str(row[ipg_c]).strip() if pd.notna(row[ipg_c]) else None
 
         # Debug: validar campos individualmente
         pod_ok = pd.notna(pod)
@@ -102,9 +103,9 @@ def build_xml(df, delete_mode=False):
             continue
 
         # Limpiar valores
-        pod_clean = int(pod)
-        leaf_clean = str(leaf).strip()
-        ipg_clean = str(ipg_port).strip()
+        pod_clean = pod
+        leaf_clean = leaf
+        ipg_clean = ipg_port
 
         tDn = build_tdn(type_val, pod_clean, leaf_clean, ipg_clean)
 
