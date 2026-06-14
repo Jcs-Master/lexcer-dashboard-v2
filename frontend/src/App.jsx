@@ -4,7 +4,6 @@ import Layout from './components/Layout'
 import PrivateRoute from './components/PrivateRoute'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
-import Templates from './pages/Templates'
 import CommandReader from './pages/CommandReader'
 import ConfigCompare from './pages/ConfigCompare'
 import Settings from './pages/Settings'
@@ -35,7 +34,6 @@ export default function App() {
         }
       >
         <Route index element={<Dashboard />} />
-        <Route path="templates" element={<Templates />} />
         <Route path="commands" element={<CommandReader />} />
         <Route path="commands/compare" element={<ConfigCompare />} />
         <Route path="aci-paths" element={<AciPaths />} />

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import {
-  Home, FileCode, Terminal, Settings, ChevronDown,
-  Network, Shield, Layers, Filter, Server, Users, Route, Activity, History, GitCompare
+  import {
+  Home, Terminal, Settings, ChevronDown,
+  Network, Users, Route, Activity, History, GitCompare
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
@@ -30,11 +30,6 @@ export default function Sidebar({ open, onClose }) {
       icon: Network,
       permission: 'templates',
       children: [
-        { id: 'aci-templates', label: 'Gestionar Plantillas', icon: FileCode, path: '/templates', permission: 'templates' },
-        { id: 'aci-bridge', label: 'Bridge Domains', icon: Layers, path: '/templates?type=aci_bridge_domain', permission: 'templates' },
-        { id: 'aci-contract', label: 'Contracts', icon: Shield, path: '/templates?type=aci_contract', permission: 'templates' },
-        { id: 'aci-epg', label: 'EPGs', icon: Server, path: '/templates?type=aci_epg', permission: 'templates' },
-        { id: 'aci-filter', label: 'Filters', icon: Filter, path: '/templates?type=aci_filter', permission: 'templates' },
         { id: 'aci-paths', label: 'Static Ports', icon: Route, path: '/aci-paths', permission: 'templates' },
         { id: 'aci-interfaces', label: 'Interface Status', icon: Activity, path: '/aci-interfaces', permission: 'templates' },
         { id: 'aci-history', label: 'Historial', icon: History, path: '/aci-history', permission: 'templates' },
