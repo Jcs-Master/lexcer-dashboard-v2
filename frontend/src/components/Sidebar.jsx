@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
   import {
   Home, Terminal, Settings, ChevronDown,
-  Network, Users, Route, Activity, History, GitCompare
+  Network, Users, Route, Activity, History, GitCompare, Server
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
