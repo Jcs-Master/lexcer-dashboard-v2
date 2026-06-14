@@ -22,7 +22,7 @@ export default function Layout() {
           flex-1 transition-all duration-300
           ${sidebarOpen ? 'lg:ml-64' : 'lg:ml-20'}
         `}>
-          <div className="p-6 lg:p-8 min-h-[calc(100vh-4rem-3rem)]">
+          <div className="p-4 lg:p-6 h-[calc(100vh-4rem)] flex flex-col overflow-hidden">
             <Outlet />
           </div>
         </main>

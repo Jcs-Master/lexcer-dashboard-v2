@@ -87,30 +87,29 @@ export default function ConfigCompare() {
   )
 
   return (
-    <div className="space-y-6">
+    <div className="flex flex-col h-[calc(100vh-4rem)] overflow-hidden">
       {/* Header */}
-      <div>
-        <h1 className="text-2xl font-bold text-slate-100 flex items-center gap-2">
-          <GitCompare className="w-6 h-6 text-cyan-400" />
+      <div className="shrink-0 mb-4">
+        <h1 className="text-xl font-bold text-slate-100 flex items-center gap-2">
+          <GitCompare className="w-5 h-5 text-cyan-400" />
           Comparador de Configuraciones
         </h1>
-        <p className="text-sm text-slate-500 mt-1">
+        <p className="text-xs text-slate-500 mt-0.5">
           Compara archivos de configuración Cisco (.txt, .cfg) línea por línea
         </p>
       </div>
 
       {/* Zona de carga */}
       {showInputs && (
-        <div className="grid gap-4 lg:grid-cols-2">
-          {/* Lado izquierdo */}
-          <div className="space-y-3">
+        <div className="shrink-0 grid gap-3 lg:grid-cols-2 mb-3">
+          <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-                <FileText className="w-4 h-4 text-amber-400" />
+              <h3 className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+                <FileText className="w-3.5 h-3.5 text-amber-400" />
                 Configuración Original
               </h3>
               {oldFileName && (
-                <span className="text-xs text-slate-500 font-mono truncate max-w-[200px]">
+                <span className="text-[10px] text-slate-500 font-mono truncate max-w-[150px]">
                   {oldFileName}
                 </span>
               )}
@@ -118,16 +117,16 @@ export default function ConfigCompare() {
             <div
               onDragOver={(e) => e.preventDefault()}
               onDrop={handleDrop('old')}
-              className={`border-2 border-dashed rounded-xl p-4 transition
+              className={`border-2 border-dashed rounded-lg p-3 transition
                 ${oldText ? 'border-emerald-500/40 bg-emerald-500/5' : 'border-slate-700 hover:border-cyan-400/40'}`}
             >
               <textarea
                 value={oldText}
                 onChange={(e) => setOldText(e.target.value)}
                 placeholder="Pega la configuración original o arrastra un archivo..."
-                className="w-full h-48 bg-transparent text-xs font-mono text-slate-300 resize-none focus:outline-none placeholder:text-slate-600"
+                className="w-full h-28 bg-transparent text-[11px] font-mono text-slate-300 resize-none focus:outline-none placeholder:text-slate-600"
               />
-              <div className="flex items-center justify-between mt-2">
+              <div className="flex items-center justify-between mt-1.5">
                 <input
                   type="file"
                   accept=".txt,.cfg"
@@ -137,27 +136,26 @@ export default function ConfigCompare() {
                 />
                 <label
                   htmlFor="old-file"
-                  className="cursor-pointer flex items-center gap-1.5 text-xs text-cyan-400 hover:text-cyan-300 transition"
+                  className="cursor-pointer flex items-center gap-1 text-[10px] text-cyan-400 hover:text-cyan-300 transition"
                 >
-                  <Upload className="w-3.5 h-3.5" />
+                  <Upload className="w-3 h-3" />
                   Cargar archivo
                 </label>
-                <span className="text-[10px] text-slate-600">
+                <span className="text-[9px] text-slate-600">
                   {oldText.split('\n').length} líneas
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Lado derecho */}
-          <div className="space-y-3">
+          <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-                <FileText className="w-4 h-4 text-emerald-400" />
+              <h3 className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+                <FileText className="w-3.5 h-3.5 text-emerald-400" />
                 Configuración Propuesta
               </h3>
               {newFileName && (
-                <span className="text-xs text-slate-500 font-mono truncate max-w-[200px]">
+                <span className="text-[10px] text-slate-500 font-mono truncate max-w-[150px]">
                   {newFileName}
                 </span>
               )}
@@ -165,16 +163,16 @@ export default function ConfigCompare() {
             <div
               onDragOver={(e) => e.preventDefault()}
               onDrop={handleDrop('new')}
-              className={`border-2 border-dashed rounded-xl p-4 transition
+              className={`border-2 border-dashed rounded-lg p-3 transition
                 ${newText ? 'border-emerald-500/40 bg-emerald-500/5' : 'border-slate-700 hover:border-cyan-400/40'}`}
             >
               <textarea
                 value={newText}
                 onChange={(e) => setNewText(e.target.value)}
                 placeholder="Pega la configuración propuesta o arrastra un archivo..."
-                className="w-full h-48 bg-transparent text-xs font-mono text-slate-300 resize-none focus:outline-none placeholder:text-slate-600"
+                className="w-full h-28 bg-transparent text-[11px] font-mono text-slate-300 resize-none focus:outline-none placeholder:text-slate-600"
               />
-              <div className="flex items-center justify-between mt-2">
+              <div className="flex items-center justify-between mt-1.5">
                 <input
                   type="file"
                   accept=".txt,.cfg"
@@ -184,12 +182,12 @@ export default function ConfigCompare() {
                 />
                 <label
                   htmlFor="new-file"
-                  className="cursor-pointer flex items-center gap-1.5 text-xs text-cyan-400 hover:text-cyan-300 transition"
+                  className="cursor-pointer flex items-center gap-1 text-[10px] text-cyan-400 hover:text-cyan-300 transition"
                 >
-                  <Upload className="w-3.5 h-3.5" />
+                  <Upload className="w-3 h-3" />
                   Cargar archivo
                 </label>
-                <span className="text-[10px] text-slate-600">
+                <span className="text-[9px] text-slate-600">
                   {newText.split('\n').length} líneas
                 </span>
               </div>
@@ -198,30 +196,30 @@ export default function ConfigCompare() {
         </div>
       )}
 
-      {/* Botones de acción */}
-      <div className="flex items-center gap-3">
+      {/* Botones */}
+      <div className="shrink-0 flex items-center gap-2 mb-2">
         <button
           onClick={handleCompare}
           disabled={loading}
-          className="btn-primary flex items-center gap-2 px-6"
+          className="btn-primary flex items-center gap-1.5 px-4 py-1.5 text-xs"
         >
-          <GitCompare className="w-4 h-4" />
+          <GitCompare className="w-3.5 h-3.5" />
           {loading ? 'Comparando...' : 'Comparar'}
         </button>
         {result && (
           <>
             <button
               onClick={handleReset}
-              className="btn-secondary flex items-center gap-2"
+              className="btn-secondary flex items-center gap-1.5 py-1.5 px-3 text-xs"
             >
-              <RotateCcw className="w-4 h-4" />
-              Nueva comparación
+              <RotateCcw className="w-3.5 h-3.5" />
+              Nueva
             </button>
             <button
               onClick={() => setShowInputs(!showInputs)}
-              className="btn-secondary flex items-center gap-2"
+              className="btn-secondary flex items-center gap-1.5 py-1.5 px-3 text-xs"
             >
-              {showInputs ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+              {showInputs ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
               Inputs
             </button>
           </>
@@ -229,73 +227,53 @@ export default function ConfigCompare() {
       </div>
 
       {error && (
-        <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-sm text-red-400 flex items-center gap-2">
-          <XCircle className="w-4 h-4" /> {error}
+        <div className="shrink-0 p-2 rounded-md bg-red-500/10 border border-red-500/20 text-xs text-red-400 flex items-center gap-1.5 mb-2">
+          <XCircle className="w-3.5 h-3.5" /> {error}
         </div>
       )}
 
       {/* Resultado */}
       {result && (
-        <div className="space-y-4">
+        <div className="flex-1 flex flex-col min-h-0">
           {/* Resumen */}
-          <div className="flex flex-wrap items-center gap-3">
-            <SummaryBadge
-              label="Total"
-              count={result.summary.total_lines}
-              colorClass="text-slate-300"
-            />
-            <SummaryBadge
-              label="Igual"
-              count={result.summary.unchanged}
-              colorClass="text-slate-400"
-            />
-            <SummaryBadge
-              label="Añadido"
-              count={result.summary.added}
-              colorClass="text-emerald-400"
-            />
-            <SummaryBadge
-              label="Eliminado"
-              count={result.summary.deleted}
-              colorClass="text-amber-400"
-            />
-            <SummaryBadge
-              label="Modificado"
-              count={result.summary.modified}
-              colorClass="text-cyan-400"
-            />
+          <div className="shrink-0 flex flex-wrap items-center gap-2 mb-1.5">
+            <SummaryBadge label="Total" count={result.summary.total_lines} colorClass="text-slate-300" />
+            <SummaryBadge label="Igual" count={result.summary.unchanged} colorClass="text-slate-400" />
+            <SummaryBadge label="Añadido" count={result.summary.added} colorClass="text-emerald-400" />
+            <SummaryBadge label="Eliminado" count={result.summary.deleted} colorClass="text-amber-400" />
+            <SummaryBadge label="Modificado" count={result.summary.modified} colorClass="text-cyan-400" />
 
-            {/* Toggle vista */}
-            <div className="ml-auto flex bg-slate-800 rounded-lg p-0.5 border border-slate-700">
+            <div className="ml-auto flex bg-slate-800 rounded-md p-0.5 border border-slate-700">
               <button
                 onClick={() => setViewMode('split')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs transition
+                className={`flex items-center gap-1 px-2 py-1 rounded-sm text-[10px] transition
                   ${viewMode === 'split' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}
               >
-                <Columns className="w-3.5 h-3.5" />
+                <Columns className="w-3 h-3" />
                 Split
               </button>
               <button
                 onClick={() => setViewMode('unified')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs transition
+                className={`flex items-center gap-1 px-2 py-1 rounded-sm text-[10px] transition
                   ${viewMode === 'unified' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}
               >
-                <LayoutTemplate className="w-3.5 h-3.5" />
+                <LayoutTemplate className="w-3 h-3" />
                 Unified
               </button>
             </div>
           </div>
 
-          {/* Advertencias si hay muchos cambios */}
           {result.summary.total_lines > 5000 && (
-            <div className="p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 text-sm text-amber-400 flex items-center gap-2">
-              <AlertTriangle className="w-4 h-4" />
+            <div className="shrink-0 p-2 rounded-md bg-amber-500/10 border border-amber-500/20 text-xs text-amber-400 flex items-center gap-1.5 mb-1.5">
+              <AlertTriangle className="w-3.5 h-3.5" />
               Archivo grande ({result.summary.total_lines} líneas). El renderizado puede ser lento.
             </div>
           )}
 
-          {/* Visor de diff */}
-          <DiffViewer diff={result.diff} viewMode={viewMode} />
+          {/* Visor de diff - ocupa todo el espacio restante */}
+          <div className="flex-1 min-h-0">
+            <DiffViewer diff={result.diff} viewMode={viewMode} />
+          </div>
         </div>
       )}
     </div>

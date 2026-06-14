@@ -54,20 +54,15 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
     }
   }, [])
 
-  const scrollbarStyles = {
-    scrollbarWidth: 'thin',
-    scrollbarColor: '#334155 #0f172a',
-  }
-
   const Pane = ({ paneRef, side }) => (
     <div
       ref={paneRef}
-      className="overflow-auto bg-black border border-slate-800 rounded-md diff-pane"
+      className="diff-pane overflow-auto bg-black border border-slate-800"
       style={{
-        ...scrollbarStyles,
-        maxHeight: 'calc(100vh - 280px)',
-        minHeight: '200px',
-        width: 'calc(50% - 2px)',
+        width: '50%',
+        height: 'calc(100vh - 300px)',
+        minHeight: '250px',
+        boxSizing: 'border-box',
       }}
     >
       {diff.map((item, idx) => (
@@ -79,11 +74,11 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
   if (viewMode === 'unified') {
     return (
       <div
-        className="overflow-auto bg-black border border-slate-800 rounded-md diff-pane"
+        className="diff-pane overflow-auto bg-black border border-slate-800 w-full"
         style={{
-          ...scrollbarStyles,
-          maxHeight: 'calc(100vh - 280px)',
-          minHeight: '200px',
+          height: 'calc(100vh - 300px)',
+          minHeight: '250px',
+          boxSizing: 'border-box',
         }}
       >
         {diff.map((item, idx) => (
@@ -94,7 +89,10 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
   }
 
   return (
-    <div className="flex gap-1 w-full">
+    <div
+      className="flex w-full"
+      style={{ gap: '2px', overflow: 'hidden' }}
+    >
       <Pane paneRef={leftPaneRef} side="left" />
       <Pane paneRef={rightPaneRef} side="right" />
     </div>
