@@ -87,7 +87,7 @@ export default function ConfigCompare() {
   )
 
   return (
-    <div className="flex flex-col flex-1 min-h-0 overflow-hidden">
+    <div className="flex flex-col" style={{ height: 'calc(100vh - 8rem)', overflow: 'hidden' }}>
       {/* Header */}
       <div className="shrink-0 mb-4">
         <h1 className="text-xl font-bold text-slate-100 flex items-center gap-2">
