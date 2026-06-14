@@ -131,7 +131,7 @@ export default function AciHistory() {
                           : 'bg-emerald-500/10 text-emerald-400'
                       }`}>
                         {g.generation_type === 'paths' ? <Route className="w-3 h-3" /> : <Activity className="w-3 h-3" />}
-                        {g.generation_type === 'paths' ? 'ACI Paths' : 'Interfaces'}
+                        {g.generation_type === 'paths' ? 'Static Ports' : 'Interfaces'}
                       </span>
                     </td>
                     <td className="px-4 py-3 font-mono text-slate-300">{g.filename}</td>
@@ -156,16 +156,16 @@ export default function AciHistory() {
                           <FileSpreadsheet className="w-3.5 h-3.5" />
                         </button>
                         <button
-                          onClick={() => downloadFile(g.id, 'main_xml', 'XML Main')}
-                          title="XML de Borrado"
-                          className="p-1.5 rounded-md bg-red-500/10 text-red-400 hover:bg-red-500/20 transition"
+                          onClick={() => downloadFile(g.id, 'rollback_xml', 'XML Creacion')}
+                          title="XML de Creacion"
+                          className="p-1.5 rounded-md bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition"
                         >
                           <FileCode className="w-3.5 h-3.5" />
                         </button>
                         <button
-                          onClick={() => downloadFile(g.id, 'rollback_xml', 'XML Rollback')}
-                          title="XML de creación"
-                          className="p-1.5 rounded-md bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition"
+                          onClick={() => downloadFile(g.id, 'main_xml', 'XML Borrado')}
+                          title="XML de Borrado"
+                          className="p-1.5 rounded-md bg-red-500/10 text-red-400 hover:bg-red-500/20 transition"
                         >
                           <FileCode className="w-3.5 h-3.5" />
                         </button>

@@ -7,7 +7,7 @@ export default function AciInterfaces() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [result, setResult] = useState(null)
-  const [activeTab, setActiveTab] = useState('main')
+  const [activeTab, setActiveTab] = useState('up')
 
   const handleFile = (e) => {
     const f = e.target.files[0]
@@ -148,28 +148,28 @@ export default function AciInterfaces() {
 
           <div className="card">
             <div className="flex border-b border-slate-800">
-              {['main', 'rollback'].map(tab => (
+              {['up', 'down'].map(tab => (
                 <button key={tab} onClick={() => setActiveTab(tab)}
                   className={`px-4 py-2.5 text-sm font-medium transition ${activeTab === tab ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-slate-500 hover:text-slate-300'}`}>
-                  {tab === 'main' ? 'XML Down (blacklist)' : 'XML Up (rollback)'}
+                  {tab === 'up' ? 'XML Up (rollback)' : 'XML Down (blacklist)'}
                 </button>
               ))}
             </div>
             <div className="p-4 bg-black rounded-b-xl overflow-auto max-h-96">
               <pre className="text-xs font-mono leading-relaxed whitespace-pre text-slate-300">
-                {activeTab === 'main' ? result.main_xml : result.rollback_xml}
+                {activeTab === 'up' ? result.rollback_xml : result.main_xml}
               </pre>
             </div>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <button onClick={() => download(`${result.filename.replace(/\.[^.]+$/, '')}_down.xml`, result.main_xml)}
-              className="btn-primary flex items-center justify-center gap-2">
-              <Download className="w-4 h-4" /> Descargar XML Down
-            </button>
             <button onClick={() => download(`${result.filename.replace(/\.[^.]+$/, '')}_up.xml`, result.rollback_xml)}
-              className="btn-secondary flex items-center justify-center gap-2">
+              className="btn-primary flex items-center justify-center gap-2">
               <Download className="w-4 h-4" /> Descargar XML Up
+            </button>
+            <button onClick={() => download(`${result.filename.replace(/\.[^.]+$/, '')}_down.xml`, result.main_xml)}
+              className="btn-secondary flex items-center justify-center gap-2">
+              <Download className="w-4 h-4" /> Descargar XML Down
             </button>
           </div>
         </div>

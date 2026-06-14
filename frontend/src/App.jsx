@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Templates from './pages/Templates'
 import CommandReader from './pages/CommandReader'
+import ConfigCompare from './pages/ConfigCompare'
 import Settings from './pages/Settings'
 import UsersPage from './pages/Users'
 import AciPaths from './pages/AciPaths'
@@ -35,6 +36,7 @@ export default function App() {
         <Route index element={<Dashboard />} />
         <Route path="templates" element={<Templates />} />
         <Route path="commands" element={<CommandReader />} />
+        <Route path="commands/compare" element={<ConfigCompare />} />
         <Route path="aci-paths" element={<AciPaths />} />
         <Route path="aci-interfaces" element={<AciInterfaces />} />
         <Route path="aci-history" element={<AciHistory />} />

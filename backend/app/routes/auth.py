@@ -336,7 +336,7 @@ def download_aci_file(gen_id, file_type):
     
     elif file_type == 'main_xml':
         main_xml = gen.main_xml or ''
-        suffix = '_delete.xml' if gen.generation_type == 'paths' else '_down.xml'
+        suffix = '_borrado.xml' if gen.generation_type == 'paths' else '_down.xml'
         return jsonify({
             'filename': gen.filename.replace('.xlsx', suffix).replace('.xls', suffix),
             'content': main_xml,
@@ -345,7 +345,7 @@ def download_aci_file(gen_id, file_type):
     
     elif file_type == 'rollback_xml':
         rollback_xml = gen.rollback_xml or ''
-        suffix = '_rollback.xml' if gen.generation_type == 'paths' else '_up.xml'
+        suffix = '_creacion.xml' if gen.generation_type == 'paths' else '_up.xml'
         return jsonify({
             'filename': gen.filename.replace('.xlsx', suffix).replace('.xls', suffix),
             'content': rollback_xml,

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import {
   Home, FileCode, Terminal, Settings, ChevronDown,
-  Network, Shield, Layers, Filter, Server, Users, Route, Activity, History
+  Network, Shield, Layers, Filter, Server, Users, Route, Activity, History, GitCompare
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
@@ -35,12 +35,13 @@ export default function Sidebar({ open, onClose }) {
         { id: 'aci-contract', label: 'Contracts', icon: Shield, path: '/templates?type=aci_contract', permission: 'templates' },
         { id: 'aci-epg', label: 'EPGs', icon: Server, path: '/templates?type=aci_epg', permission: 'templates' },
         { id: 'aci-filter', label: 'Filters', icon: Filter, path: '/templates?type=aci_filter', permission: 'templates' },
-        { id: 'aci-paths', label: 'ACI Paths', icon: Route, path: '/aci-paths', permission: 'templates' },
+        { id: 'aci-paths', label: 'Static Ports', icon: Route, path: '/aci-paths', permission: 'templates' },
         { id: 'aci-interfaces', label: 'Interfaces Up/Down', icon: Activity, path: '/aci-interfaces', permission: 'templates' },
         { id: 'aci-history', label: 'Historial', icon: History, path: '/aci-history', permission: 'templates' },
       ]
     },
-    { id: 'commands', label: 'Lector de Comandos', icon: Terminal, path: '/commands', permission: 'commands' },
+        { id: 'commands', label: 'Lector de Comandos', icon: Terminal, path: '/commands', permission: 'commands' },
+        { id: 'compare', label: 'Comparador', icon: GitCompare, path: '/commands/compare', permission: 'commands' },
     { id: 'users', label: 'Usuarios', icon: Users, path: '/users', permission: 'users', adminOnly: true },
     { id: 'settings', label: 'Configuracion', icon: Settings, path: '/settings', permission: 'settings' },
   ]

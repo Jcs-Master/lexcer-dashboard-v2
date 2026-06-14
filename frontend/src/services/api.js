@@ -66,6 +66,7 @@ export const commandsAPI = {
   getLog: (id) => api.get(`/commands/logs/${id}`),
   deleteLog: (id) => api.delete(`/commands/logs/${id}`),
   parsePreview: (content) => api.post('/commands/parse-preview', { content }),
+  compare: (oldText, newText) => api.post('/commands/compare', { old_text: oldText, new_text: newText }),
 }
 
 // ACI API

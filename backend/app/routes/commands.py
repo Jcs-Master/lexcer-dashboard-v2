@@ -1,5 +1,6 @@
 import os
 import re
+import difflib
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from werkzeug.utils import secure_filename
@@ -266,3 +267,125 @@ def parse_preview():
         }), 200
     except Exception as e:
         return jsonify({'error': f'Error en parseo: {str(e)}'}), 500
+
+
+def compute_word_diff(old_text, new_text):
+    """Calcula diferencias a nivel de palabra/caracter usando SequenceMatcher"""
+    if old_text is None:
+        old_text = ''
+    if new_text is None:
+        new_text = ''
+    sm = difflib.SequenceMatcher(None, old_text, new_text)
+    changes = []
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag == 'equal':
+            continue
+        changes.append({
+            'tag': tag,
+            'old_start': i1,
+            'old_end': i2,
+            'new_start': j1,
+            'new_end': j2,
+            'old_text': old_text[i1:i2],
+            'new_text': new_text[j1:j2]
+        })
+    return changes
+
+
+def compute_line_diff(old_text, new_text):
+    """Calcula diff línea por línea usando difflib"""
+    old_lines = old_text.splitlines() if old_text else []
+    new_lines = new_text.splitlines() if new_text else []
+    
+    sm = difflib.SequenceMatcher(None, old_lines, new_lines)
+    result = []
+    
+    added_count = 0
+    deleted_count = 0
+    modified_count = 0
+    unchanged_count = 0
+    
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag == 'equal':
+            for i, j in zip(range(i1, i2), range(j1, j2)):
+                result.append({
+                    'type': 'unchanged',
+                    'old_line': i + 1,
+                    'new_line': j + 1,
+                    'old_content': old_lines[i],
+                    'new_content': new_lines[j]
+                })
+                unchanged_count += 1
+        elif tag == 'delete':
+            for i in range(i1, i2):
+                result.append({
+                    'type': 'deleted',
+                    'old_line': i + 1,
+                    'new_line': None,
+                    'old_content': old_lines[i],
+                    'new_content': None
+                })
+                deleted_count += 1
+        elif tag == 'insert':
+            for j in range(j1, j2):
+                result.append({
+                    'type': 'added',
+                    'old_line': None,
+                    'new_line': j + 1,
+                    'old_content': None,
+                    'new_content': new_lines[j]
+                })
+                added_count += 1
+        elif tag == 'replace':
+            old_slice = old_lines[i1:i2]
+            new_slice = new_lines[j1:j2]
+            max_len = max(len(old_slice), len(new_slice))
+            for k in range(max_len):
+                old_content = old_slice[k] if k < len(old_slice) else None
+                new_content = new_slice[k] if k < len(new_slice) else None
+                old_line_num = i1 + k + 1 if k < len(old_slice) else None
+                new_line_num = j1 + k + 1 if k < len(new_slice) else None
+                
+                item = {
+                    'type': 'modified',
+                    'old_line': old_line_num,
+                    'new_line': new_line_num,
+                    'old_content': old_content,
+                    'new_content': new_content,
+                    'changes': compute_word_diff(old_content or '', new_content or '')
+                }
+                result.append(item)
+                modified_count += 1
+    
+    return {
+        'summary': {
+            'total_lines': len(result),
+            'added': added_count,
+            'deleted': deleted_count,
+            'modified': modified_count,
+            'unchanged': unchanged_count
+        },
+        'diff': result
+    }
+
+
+@commands_bp.route('/compare', methods=['POST'])
+@jwt_required()
+def compare_files():
+    """Comparar dos archivos de texto/configuración línea por línea"""
+    data = request.get_json()
+    
+    if not data:
+        return jsonify({'error': 'Se requiere un body JSON'}), 400
+    
+    old_text = data.get('old_text', '')
+    new_text = data.get('new_text', '')
+    
+    if not old_text.strip() and not new_text.strip():
+        return jsonify({'error': 'Ambos textos están vacíos'}), 400
+    
+    try:
+        result = compute_line_diff(old_text, new_text)
+        return jsonify(result), 200
+    except Exception as e:
+        return jsonify({'error': f'Error en comparación: {str(e)}'}), 500

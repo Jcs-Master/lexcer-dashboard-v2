@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { aciAPI } from '../services/api'
-import { Upload, FileSpreadsheet, Download, AlertTriangle, CheckCircle, XCircle, FileCode, Route } from 'lucide-react'
+import { Upload, FileSpreadsheet, Download, AlertTriangle, CheckCircle, XCircle, FileCode, Network } from 'lucide-react'
 
 export default function AciPaths() {
   const [file, setFile] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [result, setResult] = useState(null)
-  const [activeTab, setActiveTab] = useState('main')
+  const [activeTab, setActiveTab] = useState('create')
 
   const handleFile = (e) => {
     const f = e.target.files[0]
@@ -49,10 +49,10 @@ export default function AciPaths() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-slate-100 flex items-center gap-2">
-            <Route className="w-6 h-6 text-cyan-400" />
-            ACI Paths
+            <Network className="w-6 h-6 text-cyan-400" />
+            Static Ports
           </h1>
-          <p className="text-sm text-slate-500 mt-1">Genera XML de borrado y rollback para rutas ACI desde Excel</p>
+          <p className="text-sm text-slate-500 mt-1">Genera XML de creacion y borrado para Static Ports ACI desde Excel</p>
         </div>
       </div>
 
@@ -88,13 +88,13 @@ export default function AciPaths() {
         <div className="card p-6 space-y-4">
           <h3 className="text-sm font-semibold text-slate-200">Columnas requeridas</h3>
           <div className="flex flex-wrap gap-2">
-            {['VLAN', 'TENANT', 'AP', 'EPG', 'IPG', 'POD', 'LEAF'].map(c => (
+            {['VLAN', 'TYPE', 'MODE', 'TENANT', 'AP', 'EPG', 'POD', 'LEAF', 'IPG/PORT'].map(c => (
               <span key={c} className="px-2 py-1 rounded-md bg-slate-800 text-xs font-mono text-cyan-400 border border-slate-700">
                 {c}
               </span>
             ))}
           </div>
-          <p className="text-xs text-slate-500">Opcional: TDN_PATH (sobrescribe IPG/POD/LEAF)</p>
+          <p className="text-xs text-slate-500">TYPE: STATIC | PC | VPC. MODE: untagged | regular. LEAF para VPC: 2309-2310</p>
         </div>
       </div>
 
@@ -143,28 +143,28 @@ export default function AciPaths() {
 
           <div className="card">
             <div className="flex border-b border-slate-800">
-              {['main', 'rollback'].map(tab => (
+              {['create', 'delete'].map(tab => (
                 <button key={tab} onClick={() => setActiveTab(tab)}
                   className={`px-4 py-2.5 text-sm font-medium transition ${activeTab === tab ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-slate-500 hover:text-slate-300'}`}>
-                  {tab === 'main' ? 'XML Delete' : 'XML Rollback'}
+                  {tab === 'create' ? 'XML Creacion' : 'XML Borrado'}
                 </button>
               ))}
             </div>
             <div className="p-4 bg-black rounded-b-xl overflow-auto max-h-96">
               <pre className="text-xs font-mono leading-relaxed whitespace-pre text-slate-300">
-                {activeTab === 'main' ? result.main_xml : result.rollback_xml}
+                {activeTab === 'create' ? result.create_xml : result.delete_xml}
               </pre>
             </div>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <button onClick={() => download(`${result.filename.replace(/\.[^.]+$/, '')}_delete.xml`, result.main_xml)}
+            <button onClick={() => download(`${result.filename.replace(/\.[^.]+$/, '')}_creacion.xml`, result.create_xml)}
               className="btn-primary flex items-center justify-center gap-2">
-              <Download className="w-4 h-4" /> Descargar XML Delete
+              <Download className="w-4 h-4" /> Descargar XML de Creacion
             </button>
-            <button onClick={() => download(`${result.filename.replace(/\.[^.]+$/, '')}_rollback.xml`, result.rollback_xml)}
+            <button onClick={() => download(`${result.filename.replace(/\.[^.]+$/, '')}_borrado.xml`, result.delete_xml)}
               className="btn-secondary flex items-center justify-center gap-2">
-              <Download className="w-4 h-4" /> Descargar XML Rollback
+              <Download className="w-4 h-4" /> Descargar XML de Borrado
             </button>
           </div>
         </div>

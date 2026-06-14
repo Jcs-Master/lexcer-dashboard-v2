@@ -14,59 +14,115 @@ ALLOWED = {'xls', 'xlsx'}
 def allowed(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED
 
-def build_xml(df, rollback=False, pod_def=None, leafs_def=None):
+def build_tdn(type_val, pod, leaf, ipg_port):
+    """Construye el tDn segun el tipo de path"""
+    type_norm = str(type_val).strip().upper()
+    pod_str = str(int(pod)) if pd.notna(pod) else None
+    ipg_str = str(ipg_port).strip()
+
+    if not pod_str or not leaf or not ipg_str:
+        return None
+
+    if type_norm == 'VPC':
+        # VPC: topology/pod-{pod}/protpaths-{leaf1}-{leaf2}/pathep-[{ipg}]
+        leaf_str = str(leaf).strip()
+        return f'topology/pod-{pod_str}/protpaths-{leaf_str}/pathep-[{ipg_str}]'
+    elif type_norm in ('STATIC', 'PC'):
+        # STATIC y PC: topology/pod-{pod}/paths-{leaf}/pathep-[{port/ipg}]
+        leaf_str = str(int(leaf)) if pd.notna(leaf) else None
+        if not leaf_str:
+            return None
+        return f'topology/pod-{pod_str}/paths-{leaf_str}/pathep-[{ipg_str}]'
+    else:
+        return None
+
+def build_xml(df, delete_mode=False):
     cols_orig = list(df.columns)
     cols = normalize_cols(cols_orig)
+
     tenant_c = get_column_name(cols_orig, cols, ['TENANT'])
     app_c = get_column_name(cols_orig, cols, ['APPLICATION', 'AP'])
     epg_c = get_column_name(cols_orig, cols, ['EPG'])
     vlan_c = get_column_name(cols_orig, cols, ['VLAN'])
+    type_c = get_column_name(cols_orig, cols, ['TYPE'])
+    mode_c = get_column_name(cols_orig, cols, ['MODE'])
     pod_c = get_column_name(cols_orig, cols, ['POD'])
-    leafs_c = get_column_name(cols_orig, cols, ['LEAF', 'LEAFS'])
-    ipg_c = get_column_name(cols_orig, cols, ['INTERFACE POLICY GROUP', 'IPG'])
-    tdn_c = get_column_name(cols_orig, cols, ['TDN', 'TDN_PATH', 'TDN_PATHS'])
+    leaf_c = get_column_name(cols_orig, cols, ['LEAF'])
+    ipg_c = get_column_name(cols_orig, cols, ['IPG/PORT', 'IPG_PORT', 'IPG PORT'])
 
-    missing = [c for c, v in [('TENANT', tenant_c), ('EPG', epg_c), ('APPLICATION/AP', app_c), ('VLAN', vlan_c)] if v is None]
+    missing = [c for c, v in [('TENANT', tenant_c), ('EPG', epg_c), ('VLAN', vlan_c),
+                               ('TYPE', type_c), ('POD', pod_c), ('LEAF', leaf_c),
+                               ('IPG/PORT', ipg_c)] if v is None]
     if missing:
         raise ValueError(f'Faltan columnas: {missing}')
 
-    summary = {'rows': len(df), 'processed': 0, 'skipped': 0, 'tenants': set(), 'applications': set(), 'epgs': set(), 'warnings': []}
+    summary = {'rows': len(df), 'processed': 0, 'skipped': 0,
+               'tenants': set(), 'applications': set(), 'epgs': set(), 'warnings': []}
     pol_uni = ET.Element('polUni', status='created,modified')
     grouped = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
 
     for idx, row in df.iterrows():
         tenant = str(row[tenant_c]).strip()
-        app = str(row[app_c]).strip() if app_c else 'default'
+        app = str(row[app_c]).strip() if app_c and pd.notna(row[app_c]) else 'default'
         epg = str(row[epg_c]).strip()
         vlan = parse_vlan(row[vlan_c])
         encap = f'vlan-{vlan}'
 
-        tDn = None
-        if tdn_c and pd.notna(row[tdn_c]):
-            tDn = str(row[tdn_c]).strip()
-        elif ipg_c and pd.notna(row[ipg_c]):
-            ipg = str(row[ipg_c]).strip()
-            if '/' in ipg:
-                tDn = ipg
-            else:
-                pod = str(int(row[pod_c])) if pod_c and pd.notna(row[pod_c]) else (str(pod_def) if pod_def else None)
-                leafs = str(row[leafs_c]).strip() if leafs_c and pd.notna(row[leafs_c]) else (str(leafs_def) if leafs_def else None)
-                if pod and leafs:
-                    tDn = f'topology/pod-{pod}/protpaths-{leafs}/pathep-[{ipg}]'
+        type_val = str(row[type_c]).strip().upper()
+        mode_val = str(row[mode_c]).strip() if mode_c and pd.notna(row[mode_c]) else 'regular'
+        pod = row[pod_c]
+        leaf = row[leaf_c]
+        ipg_port = row[ipg_c]
+
+        # Debug: validar campos individualmente
+        pod_ok = pd.notna(pod)
+        leaf_ok = pd.notna(leaf) and str(leaf).strip() != ''
+        ipg_ok = pd.notna(ipg_port) and str(ipg_port).strip() != ''
+        type_ok = type_val in ('STATIC', 'PC', 'VPC')
+
+        if not pod_ok:
+            summary['skipped'] += 1
+            if len(summary['warnings']) < 10:
+                summary['warnings'].append(f'Fila {idx+2}: POD vacio o invalido')
+            continue
+        if not leaf_ok:
+            summary['skipped'] += 1
+            if len(summary['warnings']) < 10:
+                summary['warnings'].append(f'Fila {idx+2}: LEAF vacio o invalido')
+            continue
+        if not ipg_ok:
+            summary['skipped'] += 1
+            if len(summary['warnings']) < 10:
+                summary['warnings'].append(f'Fila {idx+2}: IPG/PORT vacio o invalido')
+            continue
+        if not type_ok:
+            summary['skipped'] += 1
+            if len(summary['warnings']) < 10:
+                summary['warnings'].append(f'Fila {idx+2}: TYPE invalido ({type_val}), debe ser STATIC, PC o VPC')
+            continue
+
+        # Limpiar valores
+        pod_clean = int(pod)
+        leaf_clean = str(leaf).strip()
+        ipg_clean = str(ipg_port).strip()
+
+        tDn = build_tdn(type_val, pod_clean, leaf_clean, ipg_clean)
 
         if not tDn:
             summary['skipped'] += 1
             if len(summary['warnings']) < 10:
-                summary['warnings'].append(f'Fila {idx+2}: sin tDn para {tenant}/{epg}')
+                summary['warnings'].append(f'Fila {idx+2}: error construyendo tDn (type={type_val}, pod={pod_clean}, leaf={leaf_clean}, ipg={ipg_clean})')
             continue
 
         summary['processed'] += 1
         summary['tenants'].add(tenant)
         summary['applications'].add(app)
         summary['epgs'].add(epg)
-        grouped[tenant][app][epg].append({'tDn': tDn, 'encap': encap})
+        grouped[tenant][app][epg].append({'tDn': tDn, 'encap': encap, 'mode': mode_val})
 
-    status_val = 'created,modified' if rollback else 'deleted'
+    # delete_mode=True => status="deleted" (XML de borrado)
+    # delete_mode=False => status="created,modified" (XML de creacion)
+    status_val = 'deleted' if delete_mode else 'created,modified'
     for tenant, apps in grouped.items():
         fv_t = ET.SubElement(pol_uni, 'fvTenant', name=tenant, status='created,modified')
         for app, epgs in apps.items():
@@ -74,7 +130,8 @@ def build_xml(df, rollback=False, pod_def=None, leafs_def=None):
             for epg, paths in epgs.items():
                 fv_epg = ET.SubElement(fv_ap, 'fvAEPg', name=epg, status='created,modified')
                 for p in paths:
-                    ET.SubElement(fv_epg, 'fvRsPathAtt', tDn=p['tDn'], encap=p['encap'], mode='regular', status=status_val)
+                    ET.SubElement(fv_epg, 'fvRsPathAtt', tDn=p['tDn'], encap=p['encap'],
+                                  mode=p['mode'], status=status_val)
 
     xml = prettify_xml(pol_uni)
     summary['tenants'] = sorted(summary['tenants'])
@@ -92,16 +149,16 @@ def generate():
         return jsonify({'error': 'Formato invalido. Use .xls o .xlsx'}), 400
 
     sheet = request.form.get('sheet', 'Hoja1')
-    pod_def = request.form.get('pod_default', type=int)
-    leafs_def = request.form.get('leafs_default')
 
     try:
         f.stream.seek(0)
         excel_bytes = f.read()
         df = read_excel_file(BytesIO(excel_bytes), sheet)
-        main_xml, main_sum = build_xml(df, rollback=False, pod_def=pod_def, leafs_def=leafs_def)
+        # XML de creacion (rollback=False => delete_mode=False)
+        create_xml, create_sum = build_xml(df, delete_mode=False)
         df2 = read_excel_file(BytesIO(excel_bytes), sheet)
-        rb_xml, rb_sum = build_xml(df2, rollback=True, pod_def=pod_def, leafs_def=leafs_def)
+        # XML de borrado (delete_mode=True)
+        delete_xml, delete_sum = build_xml(df2, delete_mode=True)
     except ValueError as e:
         return jsonify({'error': str(e)}), 400
     except Exception as e:
@@ -111,18 +168,18 @@ def generate():
     gen = AciGeneration(
         user_id=user_id, generation_type='paths', filename=secure_filename(f.filename),
         excel_data=excel_bytes,
-        main_xml=main_xml, rollback_xml=rb_xml, summary=main_sum
+        main_xml=create_xml, rollback_xml=delete_xml, summary=create_sum
     )
     db.session.add(gen)
     db.session.commit()
 
     return jsonify({
-        'main_xml': main_xml, 'rollback_xml': rb_xml,
+        'create_xml': create_xml, 'delete_xml': delete_xml,
         'filename': f.filename,
         'summary': {
-            'rows': main_sum['rows'], 'processed': main_sum['processed'],
-            'skipped': main_sum['skipped'], 'tenants': main_sum['tenants'],
-            'applications': main_sum['applications'], 'epgs': main_sum['epgs'],
-            'warnings': main_sum['warnings'],
+            'rows': create_sum['rows'], 'processed': create_sum['processed'],
+            'skipped': create_sum['skipped'], 'tenants': create_sum['tenants'],
+            'applications': create_sum['applications'], 'epgs': create_sum['epgs'],
+            'warnings': create_sum['warnings'],
         }
     }), 200
