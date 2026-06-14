@@ -187,10 +187,11 @@ def generate():
 def download_template():
     """Descargar plantilla Excel (.xlsx) con datos de ejemplo para Static Ports"""
     df = pd.DataFrame([
-        ['BCP_TENANT', 'BCP_AP', 'BCP_EPG_WEB', 10, 'STATIC', 'regular', 1, 101, 'eth1/1'],
-        ['BCP_TENANT', 'BCP_AP', 'BCP_EPG_DB', 20, 'PC', 'regular', 1, '101-102', 'PC_CH1'],
-        ['BCP_TENANT', 'BCP_AP', 'BCP_EPG_APP', 30, 'VPC', 'untagged', 1, '101-102', 'VPC_CH1'],
-    ], columns=['TENANT', 'APPLICATION', 'EPG', 'VLAN', 'TYPE', 'MODE', 'POD', 'LEAF', 'IPG/PORT'])
+        [600, 'STATIC', 'untagged', 'PROD_TN', 'PROD_AP', 'DC_PROD_VL600_EPG', 2, 2309, 'eth1/9'],
+        [600, 'STATIC', 'regular', 'PROD_TN', 'PROD_AP', 'DC_PROD_VL600_EPG', 2, 2309, 'eth1/17'],
+        [600, 'PC', 'regular', 'PROD_TN', 'PROD_AP', 'DC_PROD_VL600_EPG', 2, 2309, 'VIOCHP903-PC-A-IPG'],
+        [600, 'VPC', 'regular', 'PROD_TN', 'PROD_AP', 'DC_PROD_VL600_EPG', 2, '2309-2310', 'VIOCHP901-VPC-A-IPG'],
+    ], columns=['VLAN', 'TYPE', 'MODE', 'TENANT', 'APPLICATION', 'EPG', 'POD', 'LEAF', 'IPG/PORT'])
     
     buffer = BytesIO()
     df.to_excel(buffer, index=False, engine='openpyxl')
