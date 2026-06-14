@@ -116,9 +116,9 @@ def generate():
     try:
         f.stream.seek(0)
         excel_bytes = f.read()
-        df = read_excel_file(BytesIO(excel_bytes), 'Hoja1')
+        df = read_excel_file(BytesIO(excel_bytes))
         create_xml, create_sum = build_policy_group_xml(df, delete_mode=False)
-        df2 = read_excel_file(BytesIO(excel_bytes), 'Hoja1')
+        df2 = read_excel_file(BytesIO(excel_bytes))
         delete_xml, delete_sum = build_policy_group_xml(df2, delete_mode=True)
     except ValueError as e:
         return jsonify({'error': str(e)}), 400

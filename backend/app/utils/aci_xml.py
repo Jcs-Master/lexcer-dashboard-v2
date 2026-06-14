@@ -31,7 +31,7 @@ def parse_vlan(value):
         except Exception:
             raise ValueError(f'VLAN invalida: {value}')
 
-def read_excel_file(file_storage, sheet_name='Hoja1'):
+def read_excel_file(file_storage, sheet_name=0):
     from io import BytesIO
     content = file_storage.read()
     return pd.read_excel(BytesIO(content), sheet_name=sheet_name, header=0)
