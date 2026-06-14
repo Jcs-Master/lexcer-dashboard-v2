@@ -161,7 +161,9 @@ def generate():
     except ValueError as e:
         return jsonify({'error': str(e)}), 400
     except Exception as e:
-        return jsonify({'error': f'Error: {e}'}), 500
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': f'Error interno: {str(e)}'}), 500
 
     user_id = get_jwt_identity()
     gen = AciGeneration(
@@ -176,10 +178,10 @@ def generate():
         'create_xml': create_xml, 'delete_xml': delete_xml,
         'filename': f.filename,
         'summary': {
-            'rows': summary['rows'], 'processed': summary['processed'],
-            'skipped': summary['skipped'], 'tenants': list(summary['tenants']),
-            'applications': list(summary['applications']), 'epgs': list(summary['epgs']),
-            'warnings': summary['warnings'],
+            'rows': create_sum['rows'], 'processed': create_sum['processed'],
+            'skipped': create_sum['skipped'], 'tenants': list(create_sum['tenants']),
+            'applications': list(create_sum['applications']), 'epgs': list(create_sum['epgs']),
+            'warnings': create_sum['warnings'],
         }
     }), 200
 
