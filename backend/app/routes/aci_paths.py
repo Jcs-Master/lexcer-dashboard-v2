@@ -148,15 +148,13 @@ def generate():
     if f.filename == '' or not allowed(f.filename):
         return jsonify({'error': 'Formato invalido. Use .xls o .xlsx'}), 400
 
-    sheet = request.form.get('sheet', 'Hoja1')
-
     try:
         f.stream.seek(0)
         excel_bytes = f.read()
-        df = read_excel_file(BytesIO(excel_bytes), sheet)
+        df = read_excel_file(BytesIO(excel_bytes))
         # XML de creacion (rollback=False => delete_mode=False)
         create_xml, create_sum = build_xml(df, delete_mode=False)
-        df2 = read_excel_file(BytesIO(excel_bytes), sheet)
+        df2 = read_excel_file(BytesIO(excel_bytes))
         # XML de borrado (delete_mode=True)
         delete_xml, delete_sum = build_xml(df2, delete_mode=True)
     except ValueError as e:
