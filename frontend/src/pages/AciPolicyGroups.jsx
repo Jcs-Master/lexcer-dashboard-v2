@@ -43,19 +43,21 @@ export default function AciPolicyGroups() {
     URL.revokeObjectURL(url)
   }
 
-  const downloadTemplate = () => {
-    const headers = ['NAME', 'TYPE', 'DESCRIPTION', 'SPEED_POLICY', 'CDP_POLICY', 'LLDP_POLICY', 'STP_POLICY', 'AAEP', 'LACP_POLICY']
-    const example1 = ['VIOCHP913-E-15-IPG', 'LINK', 'VIOCHP913', '10G_Auto_On', 'CDP_Disabled', 'LLDP_TxOff_RxOff', 'BPDU_FilterOn_GuardOn', 'BCP_AAEP', '']
-    const example2 = ['PTSMSRVCHP01-VPC-A-IPG', 'VPC', 'PTSMSRVCHP01', '10G_Auto_On', 'CDP_Disabled', 'LLDP_TxOff_RxOff', 'BPDU_FilterOn_GuardOn', 'BCP_AAEP', 'LACP_Active']
-    const example3 = ['PCTXSDXP01-PC-A-IPG', 'PC', 'PCTXSDXP01', '10G_Auto_On', 'CDP_Disabled', 'LLDP_TxOff_RxOff', 'BPDU_FilterOn_GuardOn', 'BCP_AAEP', 'LACP_Active']
-    
-    const csvContent = [headers.join(','), example1.join(','), example2.join(','), example3.join(',')].join('\n')
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url; a.download = 'plantilla_policy_groups.csv'
-    a.click()
-    URL.revokeObjectURL(url)
+  const downloadTemplate = async () => {
+    try {
+      const res = await fetch('/api/aci-policy-groups/template')
+      if (!res.ok) throw new Error('Error descargando plantilla')
+      const blob = await res.blob()
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = 'plantilla_policy_groups.xlsx'
+      a.click()
+      URL.revokeObjectURL(url)
+    } catch (err) {
+      console.error('Error descargando plantilla:', err)
+      alert('Error al descargar la plantilla')
+    }
   }
 
   return (

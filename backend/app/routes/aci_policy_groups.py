@@ -1,6 +1,6 @@
 from io import BytesIO
 from xml.etree import ElementTree as ET
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, send_file
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from werkzeug.utils import secure_filename
 from app.models import db, AciGeneration
@@ -144,3 +144,24 @@ def generate():
             'warnings': create_sum['warnings'],
         }
     }), 200
+
+
+@aci_policy_groups_bp.route('/template', methods=['GET'])
+def download_template():
+    """Descargar plantilla Excel (.xlsx) con datos de ejemplo"""
+    df = pd.DataFrame([
+        ['VIOCHP913-E-15-IPG', 'LINK', 'VIOCHP913', '10G_Auto_On', 'CDP_Disabled', 'LLDP_TxOff_RxOff', 'BPDU_FilterOn_GuardOn', 'BCP_AAEP', ''],
+        ['PTSMSRVCHP01-VPC-A-IPG', 'VPC', 'PTSMSRVCHP01', '10G_Auto_On', 'CDP_Disabled', 'LLDP_TxOff_RxOff', 'BPDU_FilterOn_GuardOn', 'BCP_AAEP', 'LACP_Active'],
+        ['PCTXSDXP01-PC-A-IPG', 'PC', 'PCTXSDXP01', '10G_Auto_On', 'CDP_Disabled', 'LLDP_TxOff_RxOff', 'BPDU_FilterOn_GuardOn', 'BCP_AAEP', 'LACP_Active'],
+    ], columns=['NAME', 'TYPE', 'DESCRIPTION', 'SPEED_POLICY', 'CDP_POLICY', 'LLDP_POLICY', 'STP_POLICY', 'AAEP', 'LACP_POLICY'])
+    
+    buffer = BytesIO()
+    df.to_excel(buffer, index=False, engine='openpyxl')
+    buffer.seek(0)
+    
+    return send_file(
+        buffer,
+        mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        download_name='plantilla_policy_groups.xlsx',
+        as_attachment=True
+    )
