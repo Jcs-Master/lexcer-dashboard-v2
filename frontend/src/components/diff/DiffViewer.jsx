@@ -60,8 +60,7 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
       className="diff-pane overflow-auto bg-black border border-slate-800"
       style={{
         width: '50%',
-        height: 'calc(100vh - 300px)',
-        minHeight: '250px',
+        height: '100%',
         boxSizing: 'border-box',
       }}
     >
@@ -76,8 +75,7 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
       <div
         className="diff-pane overflow-auto bg-black border border-slate-800 w-full"
         style={{
-          height: 'calc(100vh - 300px)',
-          minHeight: '250px',
+          height: '100%',
           boxSizing: 'border-box',
         }}
       >
@@ -91,7 +89,7 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
   return (
     <div
       className="flex w-full"
-      style={{ gap: '2px', overflow: 'hidden' }}
+      style={{ height: '100%', gap: '2px', overflow: 'hidden' }}
     >
       <Pane paneRef={leftPaneRef} side="left" />
       <Pane paneRef={rightPaneRef} side="right" />

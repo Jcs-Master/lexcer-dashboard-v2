@@ -19,10 +19,10 @@ export default function Layout() {
           onClose={() => setSidebarOpen(false)}
         />
         <main className={`
-          flex-1 transition-all duration-300
+          flex-1 flex flex-col transition-all duration-300
           ${sidebarOpen ? 'lg:ml-64' : 'lg:ml-20'}
         `}>
-          <div className="p-4 lg:p-6 h-[calc(100vh-4rem)] flex flex-col overflow-hidden">
+          <div className="p-4 lg:p-6 flex-1 flex flex-col overflow-hidden">
             <Outlet />
           </div>
         </main>
