@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { aciAPI } from '../services/api'
-import { Upload, FileSpreadsheet, Download, AlertTriangle, CheckCircle, XCircle, FileCode, Network } from 'lucide-react'
+import { Upload, FileSpreadsheet, Download, AlertTriangle, CheckCircle, XCircle, FileCode, Network, FileDown } from 'lucide-react'
 
 export default function AciPaths() {
   const [file, setFile] = useState(null)
@@ -41,6 +41,22 @@ export default function AciPaths() {
     a.href = url; a.download = filename
     a.click()
     URL.revokeObjectURL(url)
+  }
+
+  const downloadTemplate = async () => {
+    try {
+      const res = await aciAPI.downloadPathsTemplate()
+      const blob = new Blob([res.data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = 'plantilla_static_ports.xlsx'
+      a.click()
+      URL.revokeObjectURL(url)
+    } catch (err) {
+      console.error('Error descargando plantilla:', err)
+      alert('Error al descargar la plantilla')
+    }
   }
 
 
@@ -86,7 +102,13 @@ export default function AciPaths() {
         </div>
 
         <div className="card p-6 space-y-4">
-          <h3 className="text-sm font-semibold text-slate-200">Columnas requeridas</h3>
+          <div className="flex items-center justify-between">
+            <h3 className="text-sm font-semibold text-slate-200">Columnas requeridas</h3>
+            <button onClick={downloadTemplate} className="text-xs text-cyan-400 hover:text-cyan-300 flex items-center gap-1 transition">
+              <FileDown className="w-3.5 h-3.5" />
+              Descargar plantilla
+            </button>
+          </div>
           <div className="flex flex-wrap gap-2">
             {['VLAN', 'TYPE', 'MODE', 'TENANT', 'AP', 'EPG', 'POD', 'LEAF', 'IPG/PORT'].map(c => (
               <span key={c} className="px-2 py-1 rounded-md bg-slate-800 text-xs font-mono text-cyan-400 border border-slate-700">

@@ -1,7 +1,7 @@
 from collections import defaultdict
 from io import BytesIO
 from xml.etree import ElementTree as ET
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, send_file
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from werkzeug.utils import secure_filename
 from app.models import db, AciGeneration
@@ -177,9 +177,30 @@ def generate():
         'create_xml': create_xml, 'delete_xml': delete_xml,
         'filename': f.filename,
         'summary': {
-            'rows': create_sum['rows'], 'processed': create_sum['processed'],
-            'skipped': create_sum['skipped'], 'tenants': create_sum['tenants'],
-            'applications': create_sum['applications'], 'epgs': create_sum['epgs'],
-            'warnings': create_sum['warnings'],
+            'rows': summary['rows'], 'processed': summary['processed'],
+            'skipped': summary['skipped'], 'tenants': list(summary['tenants']),
+            'applications': list(summary['applications']), 'epgs': list(summary['epgs']),
+            'warnings': summary['warnings'],
         }
     }), 200
+
+
+@aci_paths_bp.route('/template', methods=['GET'])
+def download_template():
+    """Descargar plantilla Excel (.xlsx) con datos de ejemplo para Static Ports"""
+    df = pd.DataFrame([
+        ['BCP_TENANT', 'BCP_AP', 'BCP_EPG_WEB', 10, 'STATIC', 'regular', 1, 101, 'eth1/1'],
+        ['BCP_TENANT', 'BCP_AP', 'BCP_EPG_DB', 20, 'PC', 'regular', 1, '101-102', 'PC_CH1'],
+        ['BCP_TENANT', 'BCP_AP', 'BCP_EPG_APP', 30, 'VPC', 'untagged', 1, '101-102', 'VPC_CH1'],
+    ], columns=['TENANT', 'APPLICATION', 'EPG', 'VLAN', 'TYPE', 'MODE', 'POD', 'LEAF', 'IPG/PORT'])
+    
+    buffer = BytesIO()
+    df.to_excel(buffer, index=False, engine='openpyxl')
+    buffer.seek(0)
+    
+    return send_file(
+        buffer,
+        mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        download_name='plantilla_static_ports.xlsx',
+        as_attachment=True
+    )

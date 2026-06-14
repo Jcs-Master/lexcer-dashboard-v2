@@ -80,6 +80,8 @@ export const aciAPI = {
   generatePolicyGroups: (formData) => api.post('/aci-policy-groups/generate', formData, {
     headers: { 'Content-Type': 'multipart/form-data' }
   }),
+  downloadPathsTemplate: () => api.get('/aci-paths/template', { responseType: 'blob' }),
+  downloadInterfacesTemplate: () => api.get('/aci-interfaces/template', { responseType: 'blob' }),
   listGenerations: (params) => api.get('/auth/aci-generations', { params }),
   downloadFile: (genId, fileType) => api.get(`/auth/aci-generations/${genId}/download/${fileType}`),
   deleteGeneration: (genId) => api.delete(`/auth/aci-generations/${genId}`),

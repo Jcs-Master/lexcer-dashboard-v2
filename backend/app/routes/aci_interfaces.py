@@ -1,6 +1,6 @@
 from io import BytesIO
 from xml.etree import ElementTree as ET
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, send_file
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from werkzeug.utils import secure_filename
 from app.models import db, AciGeneration
@@ -126,3 +126,24 @@ def generate():
             'warnings': down_sum['warnings'],
         }
     }), 200
+
+
+@aci_interfaces_bp.route('/template', methods=['GET'])
+def download_template():
+    """Descargar plantilla Excel (.xlsx) con datos de ejemplo para Interfaces Up/Down"""
+    df = pd.DataFrame([
+        [1, 101, 'eth1/1', 'Interfaz de ejemplo 1'],
+        [1, 102, 'eth1/2', 'Interfaz de ejemplo 2'],
+        [1, 103, 'eth1/3', 'Interfaz de ejemplo 3'],
+    ], columns=['POD', 'LEAF', 'INTERFACE', 'DESCRIPTION'])
+    
+    buffer = BytesIO()
+    df.to_excel(buffer, index=False, engine='openpyxl')
+    buffer.seek(0)
+    
+    return send_file(
+        buffer,
+        mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        download_name='plantilla_interfaces.xlsx',
+        as_attachment=True
+    )
