@@ -1,0 +1,597 @@
+<polUni status="created,modified">
+    <!--Static Ports Policies Creation-->
+    <fvTenant name="PROD_TN" status="created,modified">
+        <fvAp name="PROD_AP" status="created,modified">
+            <fvAEPg name="DC_PROD_VL600_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/9]" encap="vlan-600" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/9]" encap="vlan-600" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-A-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-B-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-A-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-B-IPG]" encap="vlan-600" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL2204_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/10]" encap="vlan-2204" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-2204" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[PTSMSRVCHP01-VPC-B-IPG]" encap="vlan-2204" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_POCDC_VL2400_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/16]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/19]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/22]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/25]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/28]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/31]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/36]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/40]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/44]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/16]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/19]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/22]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/25]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/28]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/31]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/36]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/40]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/44]" encap="vlan-2400" mode="untagged" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL64_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-64" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-64" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL601_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-A-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-B-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-A-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-B-IPG]" encap="vlan-601" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL624_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-624" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-624" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL800_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-800" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-800" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL2228_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/61]" encap="vlan-2228" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/62]" encap="vlan-2228" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/61]" encap="vlan-2228" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL2626_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/61]" encap="vlan-2626" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/62]" encap="vlan-2626" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/61]" encap="vlan-2626" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/62]" encap="vlan-2626" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-A-IPG]" encap="vlan-2626" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-B-IPG]" encap="vlan-2626" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-A-IPG]" encap="vlan-2626" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-B-IPG]" encap="vlan-2626" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL2524_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[PV8HGTLP12_IVS-PC-A-IPG]" encap="vlan-2524" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[PV8HGTLP15_IVS-PC-A-IPG]" encap="vlan-2524" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[PV8HGTLP17_IVS-PC-A-IPG]" encap="vlan-2524" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[PV8HGTLP16_IVS-PC-A-IPG]" encap="vlan-2524" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[PV8HGTLP10_IVS-PC-A-IPG]" encap="vlan-2524" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL73_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-A-IPG]" encap="vlan-73" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-B-IPG]" encap="vlan-73" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-A-IPG]" encap="vlan-73" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-B-IPG]" encap="vlan-73" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL613_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-A-IPG]" encap="vlan-613" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-B-IPG]" encap="vlan-613" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-A-IPG]" encap="vlan-613" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-B-IPG]" encap="vlan-613" mode="regular" status="created,modified"/>
+            </fvAEPg>
+        </fvAp>
+    </fvTenant>
+    <fvTenant name="EDGE_TN" status="created,modified">
+        <fvAp name="EDGE_AP" status="created,modified">
+            <fvAEPg name="EDGE_PROD_VL55_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/15]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/18]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/21]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/24]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/27]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/30]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/35]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/38]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/39]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/43]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/15]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/18]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/21]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/24]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/27]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/30]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/35]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/38]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/39]" encap="vlan-55" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/43]" encap="vlan-55" mode="untagged" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="EDGE_PROD_VL6_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/61]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/62]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/61]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/62]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-6" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-6" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="EDGE_CERT_VL87_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-87" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-87" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="EDGE_PROD_VL403_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/61]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/62]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/61]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/62]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[PCTXSDXP01-PC-A-IPG]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[PCTXSDXP01-PC-B-IPG]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[PCTXSDXP02-PC-A-IPG]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-403" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-403" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="EDGE_PROD_VL407_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/61]" encap="vlan-407" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/62]" encap="vlan-407" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/61]" encap="vlan-407" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/62]" encap="vlan-407" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-407" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-407" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-407" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-407" mode="regular" status="created,modified"/>
+            </fvAEPg>
+        </fvAp>
+    </fvTenant>
+    <fvTenant name="DC_TN" status="created,modified">
+        <fvAp name="DC_AP" status="created,modified">
+            <fvAEPg name="DC_PROD_VL7_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/61]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/62]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/61]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/62]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[PCTXSDXP02-PC-B-IPG]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-7" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-7" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL60_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-60" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-60" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL61_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/11]" encap="vlan-61" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[PTSMSRVCHP01-VPC-A-IPG]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[PTSMSRVCHP04-VPC-A-IPG]" encap="vlan-61" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-61" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-61" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL130_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-130" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-130" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL614_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[BL-KEMP-CH01-VPC-A-IPG]" encap="vlan-614" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[BL-KEMP-CH02-VPC-A-IPG]" encap="vlan-614" mode="untagged" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-A-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-B-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-A-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-B-IPG]" encap="vlan-614" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL2202_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-A-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-B-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-A-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-B-IPG]" encap="vlan-2202" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL2203_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-2203" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-2203" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL604_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/61]" encap="vlan-604" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/62]" encap="vlan-604" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/61]" encap="vlan-604" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/62]" encap="vlan-604" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-A-IPG]" encap="vlan-604" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-B-IPG]" encap="vlan-604" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-A-IPG]" encap="vlan-604" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-B-IPG]" encap="vlan-604" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL2527_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[PV8HGTLP12_IVS-PC-A-IPG]" encap="vlan-2527" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[PV8HGTLP15_IVS-PC-A-IPG]" encap="vlan-2527" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[PV8HGTLP17_IVS-PC-A-IPG]" encap="vlan-2527" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[PV8HGTLP16_IVS-PC-A-IPG]" encap="vlan-2527" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[PV8HGTLP10_IVS-PC-A-IPG]" encap="vlan-2527" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_PROD_VL662_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-A-IPG]" encap="vlan-662" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-01-VPC-B-IPG]" encap="vlan-662" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-A-IPG]" encap="vlan-662" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[CH-FI-SRV-03-VPC-B-IPG]" encap="vlan-662" mode="regular" status="created,modified"/>
+            </fvAEPg>
+        </fvAp>
+    </fvTenant>
+    <fvTenant name="PRE-PROD_TN" status="created,modified">
+        <fvAp name="PRE-PROD_AP" status="created,modified">
+            <fvAEPg name="DC_CERT_VL69_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-69" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-69" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_DESA_VL89_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-89" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-89" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_DESA_VL602_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-602" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-602" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_CERT_VL603_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-603" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-603" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_DESA_VL2200_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-2200" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-2200" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_CERT_VL2201_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/17]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/20]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/23]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/26]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[eth1/29]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/17]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/20]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/23]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/26]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[eth1/29]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP909-PC-A-IPG]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP911-PC-A-IPG]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP910-PC-A-IPG]" encap="vlan-2201" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP912-PC-A-IPG]" encap="vlan-2201" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_DESA_VL632_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/paths-2309/pathep-[VIOCHP903-PC-A-IPG]" encap="vlan-632" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/paths-2310/pathep-[VIOCHP904-PC-A-IPG]" encap="vlan-632" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-632" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-632" mode="regular" status="created,modified"/>
+            </fvAEPg>
+            <fvAEPg name="DC_DESA_VL23_EPG" status="created,modified">
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP901-VPC-A-IPG]" encap="vlan-23" mode="regular" status="created,modified"/>
+                <fvRsPathAtt tDn="topology/pod-2/protpaths-2309-2310/pathep-[VIOCHP902-VPC-A-IPG]" encap="vlan-23" mode="regular" status="created,modified"/>
+            </fvAEPg>
+        </fvAp>
+    </fvTenant>
+</polUni>

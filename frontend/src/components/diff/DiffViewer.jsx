@@ -11,7 +11,6 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
     const rightEl = rightPaneRef.current
     if (!leftEl || !rightEl) return
 
-    // Sincronizar scroll (scroll bar + touch + teclado)
     const syncScroll = (source, target) => {
       if (isSyncing.current) return
       isSyncing.current = true
@@ -26,7 +25,6 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
     leftEl.addEventListener('scroll', onLeftScroll)
     rightEl.addEventListener('scroll', onRightScroll)
 
-    // Sincronizar rueda del mouse (wheel)
     const syncWheel = (source, target, deltaY) => {
       if (isSyncing.current) return
       isSyncing.current = true
@@ -56,11 +54,21 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
     }
   }, [])
 
+  const scrollbarStyles = {
+    scrollbarWidth: 'thin',
+    scrollbarColor: '#334155 #0f172a',
+  }
+
   const Pane = ({ paneRef, side }) => (
     <div
       ref={paneRef}
-      className="flex-1 overflow-auto bg-black border border-slate-800 rounded-lg"
-      style={{ maxHeight: '70vh', minHeight: '300px' }}
+      className="overflow-auto bg-black border border-slate-800 rounded-md diff-pane"
+      style={{
+        ...scrollbarStyles,
+        maxHeight: 'calc(100vh - 280px)',
+        minHeight: '200px',
+        width: 'calc(50% - 2px)',
+      }}
     >
       {diff.map((item, idx) => (
         <DiffLine key={idx} diffItem={item} side={side} />
@@ -71,8 +79,12 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
   if (viewMode === 'unified') {
     return (
       <div
-        className="overflow-auto bg-black border border-slate-800 rounded-lg"
-        style={{ maxHeight: '70vh', minHeight: '300px' }}
+        className="overflow-auto bg-black border border-slate-800 rounded-md diff-pane"
+        style={{
+          ...scrollbarStyles,
+          maxHeight: 'calc(100vh - 280px)',
+          minHeight: '200px',
+        }}
       >
         {diff.map((item, idx) => (
           <DiffLine key={idx} diffItem={item} side="right" />
@@ -82,7 +94,7 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
   }
 
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1 w-full">
       <Pane paneRef={leftPaneRef} side="left" />
       <Pane paneRef={rightPaneRef} side="right" />
     </div>

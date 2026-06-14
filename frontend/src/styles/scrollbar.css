@@ -1,0 +1,23 @@
+/* Scrollbar styles for diff panes */
+.diff-pane::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.diff-pane::-webkit-scrollbar-track {
+  background: #0f172a;
+  border-radius: 3px;
+}
+
+.diff-pane::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+.diff-pane::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+.diff-pane::-webkit-scrollbar-corner {
+  background: #0f172a;
+}
