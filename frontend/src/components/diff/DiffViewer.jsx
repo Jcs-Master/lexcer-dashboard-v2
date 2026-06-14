@@ -82,7 +82,7 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
   }
 
   return (
-    <div ref={containerRef} style={{ display: 'flex', gap: '4px', width: '100%', overflow: 'hidden' }}>
+    <div ref={containerRef} style={{ display: 'flex', gap: '4px', width: '100%' }}>
       <Pane paneRef={leftPaneRef} side="left" />
       <Pane paneRef={rightPaneRef} side="right" />
     </div>
