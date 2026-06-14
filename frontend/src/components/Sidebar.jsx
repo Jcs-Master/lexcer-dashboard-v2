@@ -3,14 +3,14 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
   import {
   Home, Terminal, Settings, ChevronDown,
-  Network, Users, Route, Activity, History, GitCompare, Server
+  Network, Users, Route, Activity, History, GitCompare, Server, FileText
 } from 'lucide-react'
 
 export default function Sidebar({ open, onClose }) {
   const { hasPermission, isAdmin } = useAuth()
   const location = useLocation()
   const navigate = useNavigate()
-  const [expandedGroups, setExpandedGroups] = useState({ aci: true })
+  const [expandedGroups, setExpandedGroups] = useState({ aci: true, 'text-modules': true })
 
   const toggleGroup = (groupId) => {
     setExpandedGroups(prev => ({ ...prev, [groupId]: !prev[groupId] }))
@@ -32,12 +32,20 @@ export default function Sidebar({ open, onClose }) {
       children: [
         { id: 'aci-paths', label: 'Static Ports', icon: Route, path: '/aci-paths', permission: 'templates' },
         { id: 'aci-interfaces', label: 'Interface Status', icon: Activity, path: '/aci-interfaces', permission: 'templates' },
-        { id: 'aci-history', label: 'Historial', icon: History, path: '/aci-history', permission: 'templates' },
         { id: 'aci-policy-groups', label: 'Policy Groups', icon: Server, path: '/aci-policy-groups', permission: 'templates' },
+        { id: 'aci-history', label: 'Historial', icon: History, path: '/aci-history', permission: 'templates' },
       ]
     },
+    {
+      id: 'text-modules',
+      label: 'Modulos de Texto',
+      icon: FileText,
+      permission: 'commands',
+      children: [
         { id: 'commands', label: 'Lector de Comandos', icon: Terminal, path: '/commands', permission: 'commands' },
         { id: 'compare', label: 'Comparador', icon: GitCompare, path: '/commands/compare', permission: 'commands' },
+      ]
+    },
     { id: 'users', label: 'Usuarios', icon: Users, path: '/users', permission: 'users', adminOnly: true },
     { id: 'settings', label: 'Configuracion', icon: Settings, path: '/settings', permission: 'settings' },
   ]
