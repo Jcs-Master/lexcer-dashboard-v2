@@ -38,6 +38,7 @@ export default function Sidebar({ open, onClose }) {
         { id: 'aci-paths', label: 'Static Ports', icon: Route, path: '/aci-paths', permission: 'templates' },
         { id: 'aci-interfaces', label: 'Interfaces Up/Down', icon: Activity, path: '/aci-interfaces', permission: 'templates' },
         { id: 'aci-history', label: 'Historial', icon: History, path: '/aci-history', permission: 'templates' },
+        { id: 'aci-policy-groups', label: 'Policy Groups', icon: Server, path: '/aci-policy-groups', permission: 'templates' },
       ]
     },
         { id: 'commands', label: 'Lector de Comandos', icon: Terminal, path: '/commands', permission: 'commands' },

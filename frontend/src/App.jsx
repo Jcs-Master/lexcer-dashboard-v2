@@ -12,6 +12,7 @@ import UsersPage from './pages/Users'
 import AciPaths from './pages/AciPaths'
 import AciInterfaces from './pages/AciInterfaces'
 import AciHistory from './pages/AciHistory'
+import AciPolicyGroups from './pages/AciPolicyGroups'
 
 export default function App() {
   const { authenticated } = useAuth()
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="aci-paths" element={<AciPaths />} />
         <Route path="aci-interfaces" element={<AciInterfaces />} />
         <Route path="aci-history" element={<AciHistory />} />
+        <Route path="aci-policy-groups" element={<AciPolicyGroups />} />
         <Route path="users" element={<UsersPage />} />
         <Route path="settings" element={<Settings />} />
       </Route>

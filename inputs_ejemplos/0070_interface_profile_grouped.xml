@@ -1,0 +1,593 @@
+<polUni status="created,modified">
+    <infraInfra status="created,modified">
+        <infraFuncP status="created,modified">
+            <!--Interface Policies Group Creation-->
+            <infraAccPortGrp name="PTSMSRVCHP01-E-9-IPG" descr="PTSMSRVCHP01" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="PTSMSRVCHP01-E-10-IPG" descr="PTSMSRVCHP01" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="RESERVADO-LFCP-2309-E-11-IPG" descr="PTSMSRVCHP04" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP913-E-15-IPG" descr="VIOCHP913" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP913-E-16-IPG" descr="VIOCHP913" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP913-E-17-IPG" descr="VIOCHP913" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP917-E-18-IPG" descr="VIOCHP917" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP917-E-19-IPG" descr="VIOCHP917" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP917-E-20-IPG" descr="VIOCHP917" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP919-E-21-IPG" descr="VIOCHP919" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP919-E-22-IPG" descr="VIOCHP919" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP919-E-23-IPG" descr="VIOCHP919" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP921-E-24-IPG" descr="VIOCHP921" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP921-E-25-IPG" descr="VIOCHP921" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP921-E-26-IPG" descr="VIOCHP921" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP915-E-27-IPG" descr="VIOCHP915" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP915-E-28-IPG" descr="VIOCHP915" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP915-E-29-IPG" descr="VIOCHP915" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP903-E-30-IPG" descr="VIOCHP903" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP903-E-31-IPG" descr="VIOCHP903" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP901-E-35-IPG" descr="VIOCHP901" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP901-E-36-IPG" descr="VIOCHP901" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP902-E-38-IPG" descr="VIOCHP902" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP909-E-39-IPG" descr="VIOCHP909" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP909-E-40-IPG" descr="VIOCHP909" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP911-E-43-IPG" descr="VIOCHP911" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP911-E-44-IPG" descr="VIOCHP911" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="RESERVADO-LFCP-2309-E-48-IPG" descr="PINETRACSENP02" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="PESXIP46-E-61-IPG" descr="PESXIP46" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="PESXIP47-E-62-IPG" descr="PESXIP47" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="PTSMSRVCHP04-E-11-IPG" descr="PTSMSRVCHP04" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="RESERVADO-LFCP-2310-E-12-IPG" descr="VIDEOVIGILANCIA" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP914-E-15-IPG" descr="VIOCHP914" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP914-E-16-IPG" descr="VIOCHP914" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP914-E-17-IPG" descr="VIOCHP914" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP918-E-18-IPG" descr="VIOCHP918" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP918-E-19-IPG" descr="VIOCHP918" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP918-E-20-IPG" descr="VIOCHP918" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP920-E-21-IPG" descr="VIOCHP920" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP920-E-22-IPG" descr="VIOCHP920" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP920-E-23-IPG" descr="VIOCHP920" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP922-E-24-IPG" descr="VIOCHP922" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP922-E-25-IPG" descr="VIOCHP922" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP922-E-26-IPG" descr="VIOCHP922" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP916-E-27-IPG" descr="VIOCHP916" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP916-E-28-IPG" descr="VIOCHP916" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP916-E-29-IPG" descr="VIOCHP916" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP904-E-30-IPG" descr="VIOCHP904" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP904-E-31-IPG" descr="VIOCHP904" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP902-E-36-IPG" descr="VIOCHP902" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP910-E-39-IPG" descr="VIOCHP910" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP910-E-40-IPG" descr="VIOCHP910" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP912-E-43-IPG" descr="VIOCHP912" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccPortGrp name="VIOCHP912-E-44-IPG" descr="VIOCHP912" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+            </infraAccPortGrp>
+            <infraAccBndlGrp name="PCTXSDXP01-PC-A-IPG" lagT="link" descr="PCTXSDXP01" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="PCTXSDXP01-PC-B-IPG" lagT="link" descr="PCTXSDXP01" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="BL-KEMP-CH01-VPC-A-IPG" lagT="node" descr="BL-KEMP-CH01" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="BL-KEMP-CH02-VPC-A-IPG" lagT="node" descr="BL-KEMP-CH02" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="PTSMSRVCHP01-VPC-A-IPG" lagT="node" descr="PTSMSRVCHP01" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="PTSMSRVCHP04-VPC-A-IPG" lagT="node" descr="PTSMSRVCHP04" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="PV8HGTLP12_IVS-PC-A-IPG" lagT="link" descr="PV8HGTLP12_IVS" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="PV8HGTLP15_IVS-PC-A-IPG" lagT="link" descr="PV8HGTLP15_IVS" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="PV8HGTLP17_IVS-PC-A-IPG" lagT="link" descr="PV8HGTLP17_IVS" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="VIOCHP903-PC-A-IPG" lagT="link" descr="VIOCHP903" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="VIOCHP901-VPC-A-IPG" lagT="node" descr="VIOCHP901" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="VIOCHP902-VPC-A-IPG" lagT="node" descr="VIOCHP902" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="VIOCHP909-PC-A-IPG" lagT="link" descr="VIOCHP909" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="VIOCHP911-PC-A-IPG" lagT="link" descr="VIOCHP911" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="CH-FI-SRV-01-VPC-A-IPG" lagT="node" descr="CH-FI-SRV-01" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOff" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="CH-FI-SRV-01-VPC-B-IPG" lagT="node" descr="CH-FI-SRV-01" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOff" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="CH-FI-SRV-03-VPC-A-IPG" lagT="node" descr="CH-FI-SRV-03" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOff" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="CH-FI-SRV-03-VPC-B-IPG" lagT="node" descr="CH-FI-SRV-03" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOff" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="PCTXSDXP02-PC-A-IPG" lagT="link" descr="PCTXSDXP02" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="PCTXSDXP02-PC-B-IPG" lagT="link" descr="PCTXSDXP02" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="PTSMSRVCHP01-VPC-B-IPG" lagT="node" descr="PTSMSRVCHP01" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="PV8HGTLP16_IVS-PC-A-IPG" lagT="link" descr="PV8HGTLP16_IVS" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="PV8HGTLP10_IVS-PC-A-IPG" lagT="link" descr="PV8HGTLP10_IVS" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="VIOCHP904-PC-A-IPG" lagT="link" descr="VIOCHP904" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="VIOCHP910-PC-A-IPG" lagT="link" descr="VIOCHP910" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+            <infraAccBndlGrp name="VIOCHP912-PC-A-IPG" lagT="link" descr="VIOCHP912" status="created,modified">
+                <infraRsHIfPol tnFabricHIfPolName="10G_Auto_On" status="created,modified"/>
+                <infraRsCdpIfPol tnCdpIfPolName="CDP_Disabled" status="created,modified"/>
+                <infraRsLldpIfPol tnLldpIfPolName="LLDP_TxOff_RxOff" status="created,modified"/>
+                <infraRsStpIfPol tnStpIfPolName="BPDU_FilterOn_GuardOn" status="created,modified"/>
+                <infraRsAttEntP tDn="uni/infra/attentp-BCP_AAEP" status="created,modified"/>
+                <infraRsLacpPol tnLacpLagPolName="LACP_Active" status="created,modified"/>
+            </infraAccBndlGrp>
+        </infraFuncP>
+    </infraInfra>
+</polUni>
