@@ -1,33 +1,11 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import DiffLine from './DiffLine'
 
 export default function DiffViewer({ diff, viewMode = 'split' }) {
   const leftPaneRef = useRef(null)
   const rightPaneRef = useRef(null)
   const isSyncing = useRef(false)
-  const containerRef = useRef(null)
-  const [viewerHeight, setViewerHeight] = useState(400)
 
-  // Calcular altura disponible dinámicamente
-  useEffect(() => {
-    const calculateHeight = () => {
-      if (!containerRef.current) return
-      const rect = containerRef.current.getBoundingClientRect()
-      const available = window.innerHeight - rect.top - 16 // 16px margen inferior
-      setViewerHeight(Math.max(250, available))
-    }
-
-    calculateHeight()
-    window.addEventListener('resize', calculateHeight)
-    // Recalcular después de que el DOM se estabilice
-    const timeout = setTimeout(calculateHeight, 100)
-    return () => {
-      window.removeEventListener('resize', calculateHeight)
-      clearTimeout(timeout)
-    }
-  }, [])
-
-  // Sincronizar scroll entre paneles (solo scroll event, NO wheel)
   useEffect(() => {
     const leftEl = leftPaneRef.current
     const rightEl = rightPaneRef.current
@@ -37,7 +15,6 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
       if (isSyncing.current) return
       isSyncing.current = true
       target.scrollTop = source.scrollTop
-      target.scrollLeft = source.scrollLeft
       requestAnimationFrame(() => { isSyncing.current = false })
     }
 
@@ -53,18 +30,11 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
     }
   }, [])
 
-  const paneStyle = {
-    width: '50%',
-    height: `${viewerHeight}px`,
-    overflow: 'auto',
-    backgroundColor: '#000',
-    border: '1px solid #1e293b',
-    borderRadius: '6px',
-    boxSizing: 'border-box',
-  }
+  const paneClasses = "w-1/2 overflow-auto bg-black border border-slate-800 rounded-lg"
+  const paneStyle = { maxHeight: '500px' }
 
   const Pane = ({ paneRef, side }) => (
-    <div ref={paneRef} className="diff-pane" style={paneStyle}>
+    <div ref={paneRef} className={paneClasses} style={paneStyle}>
       {diff.map((item, idx) => (
         <DiffLine key={idx} diffItem={item} side={side} />
       ))}
@@ -73,7 +43,7 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
 
   if (viewMode === 'unified') {
     return (
-      <div ref={containerRef} className="diff-pane" style={{ width: '100%', height: `${viewerHeight}px`, overflow: 'auto', backgroundColor: '#000', border: '1px solid #1e293b', borderRadius: '6px' }}>
+      <div className="w-full overflow-auto bg-black border border-slate-800 rounded-lg" style={{ maxHeight: '500px' }}>
         {diff.map((item, idx) => (
           <DiffLine key={idx} diffItem={item} side="right" />
         ))}
@@ -82,7 +52,7 @@ export default function DiffViewer({ diff, viewMode = 'split' }) {
   }
 
   return (
-    <div ref={containerRef} style={{ display: 'flex', gap: '4px', width: '100%' }}>
+    <div className="flex gap-1 w-full">
       <Pane paneRef={leftPaneRef} side="left" />
       <Pane paneRef={rightPaneRef} side="right" />
     </div>
