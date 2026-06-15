@@ -168,12 +168,12 @@ export default function AciPaths() {
               {['create', 'delete'].map(tab => (
                 <button key={tab} onClick={() => setActiveTab(tab)}
                   className={`px-4 py-2.5 text-sm font-medium transition ${activeTab === tab ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-slate-500 hover:text-slate-300'}`}>
-                  {tab === 'create' ? 'XML Creacion' : 'XML Borrado'}
+                  {tab === 'create' ? 'XML Creacion (Esmeralda)' : 'XML Borrado (Ambar)'}
                 </button>
               ))}
             </div>
             <div className="p-4 bg-black rounded-b-xl overflow-auto max-h-96">
-              <pre className="text-xs font-mono leading-relaxed whitespace-pre text-slate-300">
+              <pre className={`text-xs font-mono leading-relaxed whitespace-pre ${activeTab === 'create' ? 'text-emerald-400' : 'text-amber-400'}`}>
                 {activeTab === 'create' ? result.create_xml : result.delete_xml}
               </pre>
             </div>

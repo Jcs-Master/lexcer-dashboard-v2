@@ -173,12 +173,12 @@ export default function AciInterfaces() {
               {['up', 'down'].map(tab => (
                 <button key={tab} onClick={() => setActiveTab(tab)}
                   className={`px-4 py-2.5 text-sm font-medium transition ${activeTab === tab ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-slate-500 hover:text-slate-300'}`}>
-                  {tab === 'up' ? 'XML Up (Rollback)' : 'XML Down (Blacklist)'}
+                  {tab === 'up' ? 'XML Up (Rollback - Esmeralda)' : 'XML Down (Blacklist - Ambar)'}
                 </button>
               ))}
             </div>
             <div className="p-4 bg-black rounded-b-xl overflow-auto max-h-96">
-              <pre className="text-xs font-mono leading-relaxed whitespace-pre text-slate-300">
+              <pre className={`text-xs font-mono leading-relaxed whitespace-pre ${activeTab === 'up' ? 'text-emerald-400' : 'text-amber-400'}`}>
                 {activeTab === 'up' ? result.rollback_xml : result.main_xml}
               </pre>
             </div>
