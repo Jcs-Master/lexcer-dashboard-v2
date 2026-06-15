@@ -1,0 +1,116 @@
+<polUni status="created,modified">
+    <infraInfra status="created,modified">
+        <!--Vlan Policies Creation-->
+        <fvnsVlanInstP name="DC_Phys_Static_VLPool" allocMode="static" status="created,modified">
+            <fvnsEncapBlk from="vlan-5" to="vlan-5" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-7" to="vlan-7" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-25" to="vlan-25" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-51" to="vlan-51" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-60" to="vlan-60" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-61" to="vlan-61" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-64" to="vlan-64" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-73" to="vlan-73" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-100" to="vlan-100" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-102" to="vlan-102" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-130" to="vlan-130" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-131" to="vlan-131" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-600" to="vlan-600" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-601" to="vlan-601" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-604" to="vlan-604" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-606" to="vlan-606" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-613" to="vlan-613" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-614" to="vlan-614" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-662" to="vlan-662" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2102" to="vlan-2102" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2103" to="vlan-2103" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2202" to="vlan-2202" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2203" to="vlan-2203" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2204" to="vlan-2204" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2207" to="vlan-2207" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2212" to="vlan-2212" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2215" to="vlan-2215" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2228" to="vlan-2228" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2305" to="vlan-2305" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2306" to="vlan-2306" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2400" to="vlan-2400" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2527" to="vlan-2527" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2528" to="vlan-2528" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2626" to="vlan-2626" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2651" to="vlan-2651" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2652" to="vlan-2652" status="created,modified"/>
+        </fvnsVlanInstP>
+        <fvnsVlanInstP name="EDGE_Phys_Static_VLPool" allocMode="static" status="created,modified">
+            <fvnsEncapBlk from="vlan-6" to="vlan-6" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-53" to="vlan-53" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-55" to="vlan-55" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-75" to="vlan-75" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-87" to="vlan-87" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-192" to="vlan-192" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-207" to="vlan-207" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-403" to="vlan-403" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-407" to="vlan-407" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2310" to="vlan-2310" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2311" to="vlan-2311" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2312" to="vlan-2312" status="created,modified"/>
+        </fvnsVlanInstP>
+        <fvnsVlanInstP name="PRE-PROD_Phys_Static_VLPool" allocMode="static" status="created,modified">
+            <fvnsEncapBlk from="vlan-23" to="vlan-23" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-69" to="vlan-69" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-89" to="vlan-89" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-602" to="vlan-602" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-603" to="vlan-603" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-632" to="vlan-632" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-701" to="vlan-701" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-702" to="vlan-702" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-703" to="vlan-703" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-751" to="vlan-751" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-752" to="vlan-752" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-753" to="vlan-753" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2101" to="vlan-2101" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2121" to="vlan-2121" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2174" to="vlan-2174" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2175" to="vlan-2175" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2176" to="vlan-2176" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2184" to="vlan-2184" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2185" to="vlan-2185" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2186" to="vlan-2186" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2200" to="vlan-2200" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2201" to="vlan-2201" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2208" to="vlan-2208" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2209" to="vlan-2209" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2216" to="vlan-2216" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2274" to="vlan-2274" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2275" to="vlan-2275" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2276" to="vlan-2276" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2284" to="vlan-2284" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2285" to="vlan-2285" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2286" to="vlan-2286" status="created,modified"/>
+        </fvnsVlanInstP>
+        <fvnsVlanInstP name="PROD_Phys_VLPool" allocMode="static" status="created,modified">
+            <fvnsEncapBlk from="vlan-50" to="vlan-50" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-90" to="vlan-90" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-624" to="vlan-624" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-710" to="vlan-710" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-711" to="vlan-711" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-712" to="vlan-712" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-800" to="vlan-800" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-824" to="vlan-824" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2116" to="vlan-2116" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2117" to="vlan-2117" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2118" to="vlan-2118" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2210" to="vlan-2210" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2300" to="vlan-2300" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2301" to="vlan-2301" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2302" to="vlan-2302" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2303" to="vlan-2303" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2307" to="vlan-2307" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2308" to="vlan-2308" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2309" to="vlan-2309" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2524" to="vlan-2524" status="created,modified"/>
+        </fvnsVlanInstP>
+        <fvnsVlanInstP name="HA_Phys_Static_VLPool" allocMode="static" status="created,modified">
+            <fvnsEncapBlk from="vlan-2315" to="vlan-2315" status="created,modified"/>
+            <fvnsEncapBlk from="vlan-2614" to="vlan-2614" status="created,modified"/>
+        </fvnsVlanInstP>
+    </infraInfra>
+</polUni>
