@@ -155,6 +155,7 @@ def generate():
         return jsonify({'error': f'Error interno: {str(e)}'}), 500
 
     user_id = get_jwt_identity()
+    create_sum['pools'] = list(create_sum['pools'])
     gen = AciGeneration(
         user_id=user_id, generation_type='vlan-pools', filename=secure_filename(f.filename),
         excel_data=excel_bytes,
