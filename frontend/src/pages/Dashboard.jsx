@@ -1,83 +1,124 @@
 import { useEffect, useState } from 'react'
-import { templatesAPI, commandsAPI } from '../services/api'
+import { aciAPI } from '../services/api'
 import {
-  FileCode, Terminal, Activity, TrendingUp,
-  Network, Clock, ArrowUpRight, Shield
+  Network, Route, Activity, Server, FileCode, Terminal,
+  ArrowUpRight, Clock
 } from 'lucide-react'
 
 export default function Dashboard() {
+  const [generations, setGenerations] = useState([])
   const [stats, setStats] = useState({
-    templates: 0,
-    commands: 0,
-    interfacesUp: 0,
-    interfacesDown: 0
+    paths: 0,
+    interfaces: 0,
+    'policy-groups': 0,
+    'vlan-pools': 0
   })
-  const [recentLogs, setRecentLogs] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [templatesRes, logsRes] = await Promise.all([
-          templatesAPI.list({ per_page: 1 }),
-          commandsAPI.listLogs({ per_page: 5 })
-        ])
-        setStats(prev => ({
-          ...prev,
-          templates: templatesRes.data.total || 0,
-          commands: logsRes.data.total || 0
-        }))
-        setRecentLogs(logsRes.data.items || [])
-      } catch (e) {
-        console.error('Error cargando dashboard:', e)
-      } finally {
-        setLoading(false)
-      }
-    }
     fetchData()
   }, [])
 
+  const fetchData = async () => {
+    try {
+      const res = await aciAPI.listGenerations({ per_page: 100 })
+      const items = res.data.items || []
+      setGenerations(items.slice(0, 10))
+
+      // Contar por tipo
+      const counts = { paths: 0, interfaces: 0, 'policy-groups': 0, 'vlan-pools': 0 }
+      items.forEach(g => {
+        if (counts[g.generation_type] !== undefined) {
+          counts[g.generation_type]++
+        }
+      })
+      setStats(counts)
+    } catch (e) {
+      console.error('Error cargando dashboard:', e)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   const statCards = [
     {
-      label: 'Plantillas ACI',
-      value: stats.templates,
-      icon: FileCode,
-      color: 'text-indigo-400',
-      bg: 'bg-indigo-500/10',
-      border: 'border-indigo-500/20'
-    },
-    {
-      label: 'Comandos Procesados',
-      value: stats.commands,
-      icon: Terminal,
+      label: 'Static Ports',
+      value: stats.paths,
+      icon: Route,
       color: 'text-cyan-400',
       bg: 'bg-cyan-500/10',
-      border: 'border-cyan-500/20'
+      border: 'border-cyan-500/20',
+      path: '/aci-paths'
     },
     {
-      label: 'Interfaces Up',
-      value: stats.interfacesUp,
-      icon: Network,
+      label: 'Interface Status',
+      value: stats.interfaces,
+      icon: Activity,
       color: 'text-emerald-400',
       bg: 'bg-emerald-500/10',
-      border: 'border-emerald-500/20'
+      border: 'border-emerald-500/20',
+      path: '/aci-interfaces'
     },
     {
-      label: 'Interfaces Down',
-      value: stats.interfacesDown,
-      icon: Activity,
-      color: 'text-amber-400',
-      bg: 'bg-amber-500/10',
-      border: 'border-amber-500/20'
+      label: 'Policy Groups',
+      value: stats['policy-groups'],
+      icon: Server,
+      color: 'text-purple-400',
+      bg: 'bg-purple-500/10',
+      border: 'border-purple-500/20',
+      path: '/aci-policy-groups'
+    },
+    {
+      label: 'VLAN Pools',
+      value: stats['vlan-pools'],
+      icon: Network,
+      color: 'text-orange-400',
+      bg: 'bg-orange-500/10',
+      border: 'border-orange-500/20',
+      path: '/aci-vlan-pools'
     },
   ]
+
+  const quickActions = [
+    { label: 'Static Ports', desc: 'Generar XML de paths', icon: Route, color: 'cyan', path: '/aci-paths' },
+    { label: 'Interface Status', desc: 'Up/Down interfaces', icon: Activity, color: 'emerald', path: '/aci-interfaces' },
+    { label: 'VLAN Pools', desc: 'Agregar rangos VLAN', icon: Network, color: 'orange', path: '/aci-vlan-pools' },
+    { label: 'Lector de Comandos', desc: 'Analizar configs', icon: Terminal, color: 'indigo', path: '/commands' },
+  ]
+
+  const formatDate = (iso) => {
+    if (!iso) return '-'
+    return new Date(iso).toLocaleString('es-PE')
+  }
+
+  const getTypeLabel = (type) => {
+    const labels = {
+      'paths': 'Static Ports',
+      'interfaces': 'Interface Status',
+      'policy-groups': 'Policy Groups',
+      'vlan-pools': 'VLAN Pools'
+    }
+    return labels[type] || type
+  }
+
+  const getTypeColor = (type) => {
+    const colors = {
+      'paths': 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
+      'interfaces': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+      'policy-groups': 'bg-purple-500/10 text-purple-400 border-purple-500/20',
+      'vlan-pools': 'bg-orange-500/10 text-orange-400 border-orange-500/20'
+    }
+    return colors[type] || 'bg-slate-500/10 text-slate-400'
+  }
 
   return (
     <div className="space-y-6">
       {/* Header */}
       <div>
         <h1 className="text-2xl font-bold text-slate-100">Dashboard</h1>
-        <p className="text-sm text-slate-500 mt-1">Resumen del sistema y actividad reciente</p>
+        <p className="text-sm text-slate-500 mt-1">
+          Resumen de generaciones ACI y actividad reciente
+        </p>
       </div>
 
       {/* Stats Grid */}
@@ -85,7 +126,8 @@ export default function Dashboard() {
         {statCards.map((card) => (
           <div
             key={card.label}
-            className={`card p-5 border ${card.border} hover:border-opacity-50 transition`}
+            className={`card p-5 border ${card.border} hover:border-opacity-50 transition cursor-pointer`}
+            onClick={() => window.location.href = card.path}
           >
             <div className="flex items-start justify-between">
               <div>
@@ -102,37 +144,55 @@ export default function Dashboard() {
         ))}
       </div>
 
-      {/* Recent Activity */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Recent Logs */}
+      {/* Main content grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-6">
+        {/* Recent Generations */}
         <div className="card">
           <div className="p-5 border-b border-slate-800 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-cyan-400" />
-              <h2 className="font-semibold text-slate-100">Archivos Recientes</h2>
+              <h2 className="font-semibold text-slate-100">Últimas Generaciones ACI</h2>
             </div>
-            <span className="text-xs text-slate-500">{recentLogs.length} items</span>
+            <button
+              onClick={() => window.location.href = '/aci-history'}
+              className="text-xs text-cyan-400 hover:text-cyan-300 transition"
+            >
+              Ver todo
+            </button>
           </div>
           <div className="divide-y divide-slate-800">
-            {recentLogs.length === 0 ? (
+            {loading ? (
+              <div className="p-8 text-center text-slate-500 text-sm">Cargando...</div>
+            ) : generations.length === 0 ? (
               <div className="p-8 text-center text-slate-500 text-sm">
-                No hay archivos procesados aún
+                No hay generaciones aún
               </div>
             ) : (
-              recentLogs.map((log) => (
-                <div key={log.id} className="p-4 flex items-center justify-between hover:bg-slate-800/30 transition">
+              generations.map((gen) => (
+                <div key={gen.id} className="p-4 flex items-center justify-between hover:bg-slate-800/30 transition">
                   <div className="flex items-center gap-3">
-                    <div className={`w-2 h-2 rounded-full ${log.status === 'processed' ? 'bg-emerald-500' : 'bg-amber-500'}`}></div>
+                    <div className={`w-2 h-2 rounded-full ${
+                      gen.generation_type === 'paths' ? 'bg-cyan-500' :
+                      gen.generation_type === 'interfaces' ? 'bg-emerald-500' :
+                      gen.generation_type === 'policy-groups' ? 'bg-purple-500' :
+                      'bg-orange-500'
+                    }`}></div>
                     <div>
-                      <p className="text-sm font-medium text-slate-200">{log.filename}</p>
-                      <p className="text-xs text-slate-500 font-mono">
-                        {log.device_info?.hostname || 'Unknown'} · {log.file_type?.toUpperCase()}
+                      <div className="flex items-center gap-2">
+                        <span className={`text-[10px] px-1.5 py-0.5 rounded border font-medium ${getTypeColor(gen.generation_type)}`}>
+                          {getTypeLabel(gen.generation_type)}
+                        </span>
+                        <p className="text-sm font-medium text-slate-200">{gen.filename}</p>
+                      </div>
+                      <p className="text-xs text-slate-500 mt-0.5 font-mono">
+                        {gen.summary?.rows || 0} filas · {gen.summary?.processed || 0} procesadas
                       </p>
                     </div>
                   </div>
-                  <span className="text-xs text-slate-600 font-mono">
-                    {new Date(log.created_at).toLocaleDateString()}
-                  </span>
+                  <div className="text-right">
+                    <p className="text-xs text-slate-500 font-mono">{formatDate(gen.created_at)}</p>
+                    <p className="text-[10px] text-slate-600 mt-0.5">por {gen.user?.username || '—'}</p>
+                  </div>
                 </div>
               ))
             )}
@@ -143,58 +203,29 @@ export default function Dashboard() {
         <div className="card">
           <div className="p-5 border-b border-slate-800">
             <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-indigo-400" />
+              <FileCode className="w-4 h-4 text-indigo-400" />
               <h2 className="font-semibold text-slate-100">Acciones Rápidas</h2>
             </div>
           </div>
           <div className="p-5 space-y-3">
-            <button
-              onClick={() => window.location.href = '/templates'}
-              className="w-full flex items-center justify-between p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 hover:border-indigo-500/30 transition group"
-            >
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-indigo-500/10">
-                  <FileCode className="w-4 h-4 text-indigo-400" />
+            {quickActions.map((action) => (
+              <button
+                key={action.label}
+                onClick={() => window.location.href = action.path}
+                className={`w-full flex items-center justify-between p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 hover:border-${action.color}-500/30 transition group`}
+              >
+                <div className="flex items-center gap-3">
+                  <div className={`p-2 rounded-lg bg-${action.color}-500/10`}>
+                    <action.icon className={`w-4 h-4 text-${action.color}-400`} />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm font-medium text-slate-200">{action.label}</p>
+                    <p className="text-xs text-slate-500">{action.desc}</p>
+                  </div>
                 </div>
-                <div className="text-left">
-                  <p className="text-sm font-medium text-slate-200">Nueva Plantilla ACI</p>
-                  <p className="text-xs text-slate-500">Crear configuración de red</p>
-                </div>
-              </div>
-              <ArrowUpRight className="w-4 h-4 text-slate-600 group-hover:text-indigo-400 transition" />
-            </button>
-
-            <button
-              onClick={() => window.location.href = '/commands'}
-              className="w-full flex items-center justify-between p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 hover:border-cyan-500/30 transition group"
-            >
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-cyan-500/10">
-                  <Terminal className="w-4 h-4 text-cyan-400" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm font-medium text-slate-200">Cargar Comandos</p>
-                  <p className="text-xs text-slate-500">Analizar archivo Cisco</p>
-                </div>
-              </div>
-              <ArrowUpRight className="w-4 h-4 text-slate-600 group-hover:text-cyan-400 transition" />
-            </button>
-
-            <button
-              onClick={() => window.location.href = '/templates?type=aci_contract'}
-              className="w-full flex items-center justify-between p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 hover:border-emerald-500/30 transition group"
-            >
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-emerald-500/10">
-                  <Shield className="w-4 h-4 text-emerald-400" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm font-medium text-slate-200">Contract Security</p>
-                  <p className="text-xs text-slate-500">Políticas de acceso ACI</p>
-                </div>
-              </div>
-              <ArrowUpRight className="w-4 h-4 text-slate-600 group-hover:text-emerald-400 transition" />
-            </button>
+                <ArrowUpRight className={`w-4 h-4 text-slate-600 group-hover:text-${action.color}-400 transition`} />
+              </button>
+            ))}
           </div>
         </div>
       </div>
