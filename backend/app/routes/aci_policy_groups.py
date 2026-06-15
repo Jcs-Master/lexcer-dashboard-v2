@@ -114,10 +114,10 @@ def build_policy_group_delete_xml(df):
     summary = {'rows': len(df), 'processed': 0, 'skipped': 0,
                'link': 0, 'pc': 0, 'vpc': 0, 'warnings': []}
 
-    # Estructura padre SIN status="deleted" en contenedores
-    pol_uni = ET.Element('polUni')
-    infra_infra = ET.SubElement(pol_uni, 'infraInfra')
-    infra_funcp = ET.SubElement(infra_infra, 'infraFuncP')
+    # Estructura padre con status="created,modified" en contenedores
+    pol_uni = ET.Element('polUni', status='created,modified')
+    infra_infra = ET.SubElement(pol_uni, 'infraInfra', status='created,modified')
+    infra_funcp = ET.SubElement(infra_infra, 'infraFuncP', status='created,modified')
 
     for idx, row in df.iterrows():
         name = str(row[name_c]).strip() if name_c and pd.notna(row[name_c]) else None

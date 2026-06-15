@@ -77,8 +77,8 @@ def build_vlan_pool_delete_xml(df):
     summary = {'rows': len(df), 'processed': 0, 'skipped': 0,
                'pools': set(), 'warnings': []}
 
-    pol_uni = ET.Element('polUni')
-    infra_infra = ET.SubElement(pol_uni, 'infraInfra')
+    pol_uni = ET.Element('polUni', status='created,modified')
+    infra_infra = ET.SubElement(pol_uni, 'infraInfra', status='created,modified')
 
     grouped = defaultdict(list)
 
