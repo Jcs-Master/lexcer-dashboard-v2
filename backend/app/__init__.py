@@ -46,6 +46,7 @@ def create_app(config_name='development'):
     from app.routes.aci_interfaces import aci_interfaces_bp
     from app.routes.aci_policy_groups import aci_policy_groups_bp
     from app.routes.aci_vlan_pools import aci_vlan_pools_bp
+    from app.routes.aci_interface_selector import aci_interface_selector_bp
     
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
     app.register_blueprint(templates_bp, url_prefix='/api/templates')
@@ -54,6 +55,7 @@ def create_app(config_name='development'):
     app.register_blueprint(aci_interfaces_bp)
     app.register_blueprint(aci_policy_groups_bp)
     app.register_blueprint(aci_vlan_pools_bp)
+    app.register_blueprint(aci_interface_selector_bp)
     
     # Health check
     @app.route('/api/health')

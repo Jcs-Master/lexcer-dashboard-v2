@@ -13,6 +13,7 @@ import AciInterfaces from './pages/AciInterfaces'
 import AciHistory from './pages/AciHistory'
 import AciPolicyGroups from './pages/AciPolicyGroups'
 import AciVlanPools from './pages/AciVlanPools'
+import AciInterfaceSelector from './pages/AciInterfaceSelector'
 
 export default function App() {
   const { authenticated } = useAuth()
@@ -42,6 +43,7 @@ export default function App() {
         <Route path="aci-history" element={<AciHistory />} />
         <Route path="aci-policy-groups" element={<AciPolicyGroups />} />
         <Route path="aci-vlan-pools" element={<AciVlanPools />} />
+        <Route path="aci-interface-selector" element={<AciInterfaceSelector />} />
         <Route path="users" element={<UsersPage />} />
         <Route path="settings" element={<Settings />} />
       </Route>

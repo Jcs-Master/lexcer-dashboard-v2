@@ -1,0 +1,89 @@
+<polUni status="created,modified">
+    <infraInfra status="created,modified">
+        <!--Leaf Profile Policies Creation-->
+        <infraAccPortP name="L2309" status="created,modified">
+            <infraHPortS name="ISEL-1.1" descr="SRV: PCTXSDXP01 - Port: 10/1" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2309_1111" fromCard="1" fromPort="1" toCard="1" toPort="1" descr="SRV: PCTXSDXP01 - Port: 10/1" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PCTXSDXP01-PC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.2" descr="SRV: PCTXSDXP01 - Port: 10/2" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2309_1212" fromCard="1" fromPort="2" toCard="1" toPort="2" descr="SRV: PCTXSDXP01 - Port: 10/2" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PCTXSDXP01-PC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.3" descr="SRV: PCTXSDXP01 - Port: 10/3" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2309_1313" fromCard="1" fromPort="3" toCard="1" toPort="3" descr="SRV: PCTXSDXP01 - Port: 10/3" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PCTXSDXP01-PC-B-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.4" descr="SRV: PCTXSDXP01 - Port: 10/4" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2309_1414" fromCard="1" fromPort="4" toCard="1" toPort="4" descr="SRV: PCTXSDXP01 - Port: 10/4" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PCTXSDXP01-PC-B-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.5" descr="NET: BL-KEMP-CH01 - Port: E 16" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2309_1515" fromCard="1" fromPort="5" toCard="1" toPort="5" descr="NET: BL-KEMP-CH01 - Port: E 16" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-BL-KEMP-CH01-VPC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.6" descr="SRV: BL-KEMP-CH02 - Port: E 16" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2309_11616" fromCard="1" fromPort="6" toCard="1" toPort="6" descr="SRV: BL-KEMP-CH02 - Port: E 16" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-BL-KEMP-CH02-VPC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.7" descr="SRV: PTSMSRVCHP01 - Port: P1_C5_P1" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2309_1717" fromCard="1" fromPort="7" toCard="1" toPort="7" descr="SRV: PTSMSRVCHP01 - Port: P1_C5_P1" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PTSMSRVCHP01-VPC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.8" descr="SRV: PTSMSRVCHP04 - Port: P1_C5_C1_P1" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2309_1818" fromCard="1" fromPort="8" toCard="1" toPort="8" descr="SRV: PTSMSRVCHP04 - Port: P1_C5_C1_P1" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PTSMSRVCHP04-VPC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.9" descr="SRV: PTSMSRVCHP01 - Port: P1_C3_C1_P1" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2309_1919" fromCard="1" fromPort="9" toCard="1" toPort="9" descr="SRV: PTSMSRVCHP01 - Port: P1_C3_C1_P1" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accportgrp-PTSMSRVCHP01-E-9-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.10" descr="SRV: PTSMSRVCHP01 - Port: P1_C3_C1_P1" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2309_110110" fromCard="1" fromPort="10" toCard="1" toPort="10" descr="SRV: PTSMSRVCHP01 - Port: P1_C3_C1_P1" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accportgrp-PTSMSRVCHP01-E-10-IPG" status="created,modified"/>
+            </infraHPortS>
+        </infraAccPortP>
+        <infraAccPortP name="L2310" status="created,modified">
+            <infraHPortS name="ISEL-1.1" descr="SRV: PCTXSDXP02 - Port: 10/1" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2310_1111" fromCard="1" fromPort="1" toCard="1" toPort="1" descr="SRV: PCTXSDXP02 - Port: 10/1" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PCTXSDXP02-PC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.2" descr="SRV: PCTXSDXP02 - Port: 10/2" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2310_1212" fromCard="1" fromPort="2" toCard="1" toPort="2" descr="SRV: PCTXSDXP02 - Port: 10/2" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PCTXSDXP02-PC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.3" descr="SRV: PCTXSDXP02 - Port: 10/3" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2310_1313" fromCard="1" fromPort="3" toCard="1" toPort="3" descr="SRV: PCTXSDXP02 - Port: 10/3" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PCTXSDXP02-PC-B-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.4" descr="SRV: PCTXSDXP02 - Port: 10/4" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2310_1414" fromCard="1" fromPort="4" toCard="1" toPort="4" descr="SRV: PCTXSDXP02 - Port: 10/4" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PCTXSDXP02-PC-B-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.5" descr="NET: BL-KEMP-CH01 - Port: E 6" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2310_1515" fromCard="1" fromPort="5" toCard="1" toPort="5" descr="NET: BL-KEMP-CH01 - Port: E 6" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-BL-KEMP-CH01-VPC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.6" descr="SRV: BL-KEMP-CH02 - Port: E 6" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2310_1616" fromCard="1" fromPort="6" toCard="1" toPort="6" descr="SRV: BL-KEMP-CH02 - Port: E 6" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-BL-KEMP-CH02-VPC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.7" descr="SRV: PTSMSRVCHP01 - Port: P1_C6_P1" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2310_1717" fromCard="1" fromPort="7" toCard="1" toPort="7" descr="SRV: PTSMSRVCHP01 - Port: P1_C6_P1" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PTSMSRVCHP01-VPC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.8" descr="SRV: PTSMSRVCHP04 - Port: P1_C5_C1_P2" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2310_1818" fromCard="1" fromPort="8" toCard="1" toPort="8" descr="SRV: PTSMSRVCHP04 - Port: P1_C5_C1_P2" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PTSMSRVCHP04-VPC-A-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.9" descr="SRV: PTSMSRVCHP01 - Port: P1_C3_C1_P2" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2310_1919" fromCard="1" fromPort="9" toCard="1" toPort="9" descr="SRV: PTSMSRVCHP01 - Port: P1_C3_C1_P2" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accportgrp-PTSMSRVCHP01-E-9-IPG" status="created,modified"/>
+            </infraHPortS>
+            <infraHPortS name="ISEL-1.10" descr="SRV: PTSMSRVCHP01 - Port: P1_C6_P2" type="range" status="created,modified">
+                <infraPortBlk name="Blk_L2310_110110" fromCard="1" fromPort="10" toCard="1" toPort="10" descr="SRV: PTSMSRVCHP01 - Port: P1_C6_P2" status="created,modified"/>
+                <infraRsAccBaseGrp tDn="uni/infra/funcprof/accbundle-PTSMSRVCHP01-VPC-B-IPG" status="created,modified"/>
+            </infraHPortS>
+        </infraAccPortP>
+    </infraInfra>
+</polUni>

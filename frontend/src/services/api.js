@@ -86,6 +86,10 @@ export const aciAPI = {
   generateVlanPools: (formData) => api.post('/aci-vlan-pools/generate', formData, {
     headers: { 'Content-Type': 'multipart/form-data' }
   }),
+  downloadInterfaceSelectorTemplate: () => api.get('/aci-interface-selector/template', { responseType: 'blob' }),
+  generateInterfaceSelector: (formData) => api.post('/aci-interface-selector/generate', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
   listGenerations: (params) => api.get('/auth/aci-generations', { params }),
   downloadFile: (genId, fileType) => api.get(`/auth/aci-generations/${genId}/download/${fileType}`),
   deleteGeneration: (genId) => api.delete(`/auth/aci-generations/${genId}`),

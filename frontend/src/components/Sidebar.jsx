@@ -34,6 +34,7 @@ export default function Sidebar({ open, onClose }) {
         { id: 'aci-interfaces', label: 'Interface Status', icon: Activity, path: '/aci-interfaces', permission: 'templates' },
         { id: 'aci-policy-groups', label: 'Policy Groups', icon: Server, path: '/aci-policy-groups', permission: 'templates' },
         { id: 'aci-vlan-pools', label: 'VLAN Pools', icon: Network, path: '/aci-vlan-pools', permission: 'templates' },
+        { id: 'aci-interface-selector', label: 'Interface Selector', icon: Network, path: '/aci-interface-selector', permission: 'templates' },
         { id: 'aci-history', label: 'Historial', icon: History, path: '/aci-history', permission: 'templates' },
       ]
     },
