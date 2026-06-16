@@ -113,7 +113,7 @@ export default function AciInterfaceSelector() {
               </span>
             ))}
           </div>
-          <p className="text-xs text-slate-500">TYPE: ACCESS | PC | VPC. El nombre del bloque se genera automáticamente: Blk_{LEAF_PROFILE}_{FROM_CARD}{FROM_PORT}{TO_CARD}{TO_PORT}</p>
+          <p className="text-xs text-slate-500">TYPE: ACCESS | PC | VPC. El nombre del bloque se genera automáticamente: Blk_{'{'}LEAF_PROFILE{'}'}_{'{'}FROM_CARD{'}'}{'{'}FROM_PORT{'}'}{'{'}TO_CARD{'}'}{'{'}TO_PORT{'}'}</p>
         </div>
       </div>
 
